@@ -6,7 +6,9 @@ html {
 body {
   /* font-family: "Roboto", sans-serif; */
   overflow-x: hidden;
-  background-color: #121212 !important;
+  /* background-color: #121212 !important; */
+  background-color: #333 !important;
+
   color: #fff !important;
 }
 
@@ -23,7 +25,7 @@ button {
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 9999;
@@ -31,7 +33,7 @@ nav.navbar {
 }
 
 nav.navbar.scrolled {
-  padding: 0;
+  padding: 10px;
   background-color: #121212;
 }
 
@@ -43,7 +45,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
+  padding: 5px 25px;
   font-size: 18px;
   opacity: 0.75;
 }
@@ -52,6 +54,19 @@ nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
 }
+
+/** intro **/
+.intro {
+  /* background-color: #121212; */
+  color: #fff;
+  padding: 1em;
+  font-size: 60px;
+}
+
+.intro span {
+  font-size: 80px;
+}
+
 /* 
 span.navbar-text {
   display: flex;

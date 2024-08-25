@@ -2,14 +2,16 @@ import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Intro from "./components/Intro";
+import Projects from "./components/Projects";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <header>
-        <h1>About Me</h1>
-      </header>
+      <Intro />
+      <Projects />
+
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
         vestibulum, ipsum nec aliquam lacinia, nunc urna ultricies nisl, vitae

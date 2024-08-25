@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 import { useState, useEffect } from "react";
 
-const NavLink = ({ href, activeLink, setActiveLink }) => {
+const CustomNavLink = ({ href, activeLink, setActiveLink }) => {
   return (
     <Nav.Link
       href={"#" + href}
@@ -46,48 +46,31 @@ const NavBar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            {/* <Nav.Link
-              href="#home"
-              className={
-                activeLink === "home" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => setActiveLink("home")}
-            >
-              Home
-            </Nav.Link> */}
-            <NavLink
+            <CustomNavLink
               href="home"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
-            <NavLink
+            <CustomNavLink
               href="resume"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
-            <NavLink
+            <CustomNavLink
               href="contact"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
-            <Nav.Link
-              href="#skills"
-              className={
-                activeLink === "skills" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => setActiveLink("skills")}
-            >
-              Skills
-            </Nav.Link>
-            <Nav.Link
-              href="#projects"
-              className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
-              }
-              onClick={() => setActiveLink("projects")}
-            >
-              Projects
-            </Nav.Link>
+            <CustomNavLink
+              href="skills"
+              activeLink={activeLink}
+              setActiveLink={setActiveLink}
+            />
+            <CustomNavLink
+              href="projects"
+              activeLink={activeLink}
+              setActiveLink={setActiveLink}
+            />
           </Nav>
         </Navbar.Collapse>
       </Container>
