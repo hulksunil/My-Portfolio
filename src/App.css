@@ -7,7 +7,8 @@ body {
   /* font-family: "Roboto", sans-serif; */
   overflow-x: hidden;
   /* background-color: #121212 !important; */
-  background-color: #333 !important;
+  /* background-color: #333 !important; */
+  background-color: #000 !important;
 
   color: #fff !important;
 }
@@ -60,11 +61,22 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   /* background-color: #121212; */
   color: #fff;
   padding: 1em;
-  font-size: 60px;
+  font-size: 50px;
 }
 
-.intro span {
-  font-size: 80px;
+.intro #myName {
+  font-size: 70px;
+}
+
+.intro .bio {
+  font-size: 20px;
+  margin-top: 1em;
+  color: #898989;
+}
+
+/** The cursor **/
+.typingText {
+  border-right: 0.08em solid #666;
 }
 
 /* 
