@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Intro from "./components/Intro";
 import Projects from "./components/Projects";
+import Skills from "./components/Skills";
 
 function App() {
   return (
@@ -12,38 +13,7 @@ function App() {
       <Intro />
       <Projects />
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        vestibulum, ipsum nec aliquam lacinia, nunc urna ultricies nisl, vitae
-        rhoncus nisl risus nec nunc. Nullam ac nunc in nisi ultricies
-        sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec nunc
-        ultricies sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec
-        nunc ultricies sollicitudin. Nullam nec ultricies turpis.
-      </p>
-
-      <header>
-        <h1>Skills</h1>
-      </header>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        vestibulum, ipsum nec aliquam lacinia, nunc urna ultricies nisl, vitae
-        rhoncus nisl risus nec nunc. Nullam ac nunc in nisi ultricies
-        sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec nunc
-        ultricies sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec
-        nunc ultricies sollicitudin. Nullam nec ultricies turpis.
-      </p>
-
-      <header>
-        <h1>Projects</h1>
-      </header>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        vestibulum, ipsum nec aliquam lacinia, nunc urna ultricies nisl, vitae
-        rhoncus nisl risus nec nunc. Nullam ac nunc in nisi ultricies
-        sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec nunc
-        ultricies sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec
-        nunc ultricies sollicitudin. Nullam nec ultricies turpis.
-      </p>
+      <Skills />
     </div>
   );
 }

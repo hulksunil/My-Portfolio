@@ -9,6 +9,10 @@ body {
   /* background-color: #121212 !important; */
   /* background-color: #333 !important; */
   background-color: #000 !important;
+  background-image: url("./assets/img/background.jpg");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   color: #fff !important;
 }
@@ -56,27 +60,48 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
 }
 
+/* .toggled {
+  background-color: #121212;
+} */
+
 /** intro **/
 .intro {
   /* background-color: #121212; */
   color: #fff;
-  padding: 1em;
+  padding: 3em 1em;
   font-size: 50px;
+  min-height: 80vh;
 }
 
 .intro #myName {
   font-size: 70px;
 }
 
+/** The cursor **/
+@keyframes blink {
+  from {
+    border: none;
+  }
+  to {
+    border-right: 0.08em solid #666;
+  }
+}
+
+.typingText {
+  /* border-right: 0.08em solid #666; */
+  animation: blink 1s infinite;
+}
+
 .intro .bio {
   font-size: 20px;
   margin-top: 1em;
-  color: #898989;
+  color: #ababab;
+  letter-spacing: 2px;
 }
 
-/** The cursor **/
-.typingText {
-  border-right: 0.08em solid #666;
+/** projects **/
+.projects {
+  text-align: center;
 }
 
 /* 

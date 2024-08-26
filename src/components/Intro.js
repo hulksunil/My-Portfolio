@@ -47,37 +47,28 @@ const TypingThing = ({ toRotate }) => {
       setLoopNum(loopNum + 1);
     }
   };
-  return <span className="typingText">{text}</span>;
+  return <span className="typingText"> {text}</span>;
 };
 
 const Intro = () => {
-  const toRotate = ["Full Stack Developer", "Programmer", "Computer Engineer"];
+  const toRotate = ["Full Stack Developer", "Coder", "Computer Engineer"];
   return (
-    // <header id="home">
-    <Container id="home">
+    <Container id="home" className="container-fluid" style={{ margin: "0" }}>
       <Row className="align-items-center">
         <Col xs={12} md={6} lg={7}>
           <div className="intro">
             <h1>
-              Hi, its me, <span id="myName">Sunil </span>
+              Hi! I'm <span id="myName">Sunil</span>
             </h1>
             <TypingThing toRotate={toRotate} />
             <p className="bio">
-              A passionate Computer Engineering student at Concordia University
-              with a passion for technology and problem-solving. My focus is on
-              software development, where I enjoy turning complex ideas into
-              practical solutions. I’m driven by curiosity and a desire to
-              innovate. My goal is to contribute to cutting-edge technologies
-              that shape the future.
+              Driven by curiosity and a desire to innovate, with the goal of
+              contributing to cutting-edge technologies that shape the future.
             </p>
           </div>
         </Col>
-        <Col md={6} className="intro-img">
-          {/* <img src={intro} alt="intro" /> */}
-        </Col>
       </Row>
     </Container>
-    // </header>
   );
 };
 
