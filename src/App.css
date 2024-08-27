@@ -2,6 +2,24 @@
   --primary-color: #121212;
   --secondary-color: #000;
   --text-color: #fff;
+  --secondary-text-color: #ababab;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e; /* Match this to your dark background color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555; /* Slightly lighter than the background for contrast */
+  border-radius: 4px; /* Rounded edges for a smooth, clean look */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888; /* Slightly lighter on hover for better visibility */
 }
 
 html {
@@ -77,7 +95,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: var(--text-color);
   padding: 3em 1em;
   font-size: 50px;
-  min-height: 80vh;
+  min-height: 99vh;
 }
 
 .intro #myName {
@@ -102,7 +120,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .intro .bio {
   font-size: 20px;
   margin-top: 1em;
-  color: #ababab;
+  color: var(--secondary-text-color);
   letter-spacing: 2px;
 }
 
@@ -122,10 +140,18 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .projectCard {
   background-color: var(--primary-color) !important;
   color: var(--text-color) !important;
-  padding: 1em;
   margin: 1em;
   border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+}
+
+.projectCard .card-title {
+  font-size: 1.7em;
+  padding: 0.5em;
+}
+
+.projectCard .card-text {
+  color: var(--secondary-text-color);
 }
 
 .projectCard .projectKeywords {

@@ -5,8 +5,8 @@ function ProjectCard({ title, description, tags, link, img }) {
   return (
     <Card className="projectCard">
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
         <Card.Img variant="top" src={img} />
+        <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
         <div className="projectKeywords">
           {tags.map((tag) => (
