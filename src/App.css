@@ -104,6 +104,20 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   text-align: center;
 }
 
+.projectKeywords {
+  padding: 0.2em;
+}
+
+.projectCard {
+  background-color: #121212;
+  color: #fff;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 94% !important;
+}
+
 /* 
 span.navbar-text {
   display: flex;
