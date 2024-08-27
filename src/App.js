@@ -14,7 +14,7 @@ const projects = [
     title: "Bouncing Ball",
     description:
       "A ball that bounces. Also includes a little game where you have to try to hit all the targets as fast as possible",
-    tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Solo Project"],
     link: "https://gitlab.com/hulksunil/bouncing-ball",
     img: bouncingBall,
   },
@@ -22,8 +22,8 @@ const projects = [
     title: "Car Rental Application",
     description:
       "This car rental app connects users with vehicles for short-term rentals, ranging from a few hours to a few weeks, serving as the interface between customers and the rental company.",
-    tags: ["MongoDB", "Express", "ReactJS", "Node.js"],
-    link: "https://github.com/username/project-two",
+    tags: ["MongoDB", "Express", "ReactJS", "Node.js", "Team Leader of 5"],
+    link: "https://github.com/hulksunil/Error_404-soen341projectW2024",
     img: carsRUs,
   },
 ];

@@ -15,7 +15,7 @@ function ProjectCard({ title, description, tags, link, img }) {
             </Badge>
           ))}
         </div>
-        <Button variant="primary" href={link} target="_blank">
+        <Button variant="outline-light" href={link} target="_blank">
           View Project
         </Button>
       </Card.Body>
