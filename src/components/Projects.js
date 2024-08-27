@@ -1,4 +1,4 @@
-import { Badge, Col, Container } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Card, Button } from "react-bootstrap";
 
 function ProjectCard({ title, description, tags, link, img }) {
@@ -25,20 +25,20 @@ function ProjectCard({ title, description, tags, link, img }) {
 
 const Projects = ({ projects }) => {
   return (
-    <Container id="projects" className="projects">
+    <Container fluid id="projects" className="projects">
       <h1>Projects</h1>
       <p>
         I love working on projects! Here are some of the projects that I have
         worked on:
       </p>
 
-      <Container className="container-fluid d-flex justify-content-between">
+      <Row className="justify-content-around">
         {projects.map((project) => (
-          <Col xs={12} md={6} lg={4} key={project.title}>
+          <Col sm={12} md={6} lg={4} key={project.title}>
             <ProjectCard {...project} />
           </Col>
         ))}
-      </Container>
+      </Row>
     </Container>
   );
 };

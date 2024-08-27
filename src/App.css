@@ -15,6 +15,7 @@ body {
   background-repeat: no-repeat;
 
   color: #fff !important;
+  font-size: 18px;
 }
 
 img {
@@ -104,18 +105,27 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   text-align: center;
 }
 
+.projects h1 {
+  font-size: 3.5em;
+}
+
+.projects p {
+  font-size: larger;
+}
+
 .projectKeywords {
   padding: 0.2em;
 }
 
 .projectCard {
-  background-color: #121212;
-  color: #fff;
+  background-color: #121212 !important;
+  color: #fff !important;
   padding: 1em;
   margin: 1em;
-  border-radius: 10px;
+  border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  height: 94% !important;
+
+  /* height: 94% !important; */
 }
 
 /* 

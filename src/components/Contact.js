@@ -1,9 +1,11 @@
+import { Container } from "react-bootstrap";
+
 const Contact = () => {
   return (
-    <div>
+    <Container id="contact">
       <h1>Contact</h1>
       <p>Send us a message!</p>
-    </div>
+    </Container>
   );
 };
 
