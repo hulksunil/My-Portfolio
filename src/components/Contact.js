@@ -3,7 +3,6 @@ import { Anchor, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { IoMdMail } from "react-icons/io";
-import { MdAlternateEmail } from "react-icons/md";
 import { TiLocationOutline } from "react-icons/ti";
 
 /**
@@ -63,10 +62,15 @@ const Contact = () => {
             <p>QC, Montreal</p>
           </div>
           <div className="socials">
-            <Anchor href="https://github.com/hulksunil" target="_blank">
+            <Anchor
+              className="text-reset"
+              href="https://github.com/hulksunil"
+              target="_blank"
+            >
               <FaGithub size={"30px"} />
             </Anchor>
             <Anchor
+              className="text-reset"
               href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
               target="_blank"
             >

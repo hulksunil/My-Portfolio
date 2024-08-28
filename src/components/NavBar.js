@@ -1,6 +1,8 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
+import CV from "../assets/Sunil_Kublalsingh.pdf";
+
 const CustomNavLink = ({ href, activeLink, setActiveLink }) => {
   return (
     <Nav.Link
@@ -61,18 +63,11 @@ const NavBar = () => {
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
+            <Nav.Link href={CV} target="_blank" className={"navbar-link"}>
+              Resume
+            </Nav.Link>
             <CustomNavLink
-              href="resume"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            />
-            <CustomNavLink
-              href="contact"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            />
-            <CustomNavLink
-              href="skills"
+              href="experience"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
@@ -82,7 +77,12 @@ const NavBar = () => {
               setActiveLink={setActiveLink}
             />
             <CustomNavLink
-              href="experience"
+              href="skills"
+              activeLink={activeLink}
+              setActiveLink={setActiveLink}
+            />
+            <CustomNavLink
+              href="contact"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />

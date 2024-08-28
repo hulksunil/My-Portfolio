@@ -187,8 +187,16 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   padding-left: 1em;
 }
 
+.contact form label {
+  font-size: 18px;
+}
+
 .contact form input {
   width: 100%;
+}
+
+.contact form button {
+  font-weight: 500;
 }
 
 .socials a {
