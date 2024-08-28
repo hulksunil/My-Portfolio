@@ -44,12 +44,10 @@ function App() {
     <div className="App">
       <NavBar />
       <Intro />
-      <div className="content">
-        <Experience />
-        <Projects projects={projects} />
-        <Skills />
-        <Contact />
-      </div>
+      <Experience />
+      <Projects projects={projects} />
+      <Skills />
+      <Contact />
       <Footer />
     </div>
   );
