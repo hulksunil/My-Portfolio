@@ -49,10 +49,7 @@ const Contact = () => {
             I'm currently studying at school but send me a message and I'll be
             sure to get back to you!
           </p>
-          <div className="d-flex contactInfo">
-            <FiPhoneCall size={"30px"} />
-            <p>514-770-4765</p>
-          </div>
+
           <div className="d-flex contactInfo">
             <IoMail size={"30px"} />
             <p>sunil.kub17@gmail.com</p>
