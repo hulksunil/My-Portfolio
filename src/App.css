@@ -179,8 +179,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   padding: 3em;
 }
 
-.contact p {
-  font-size: 20px;
+.contact > .row > * {
+  margin-top: 1em;
 }
 
 .contactInfo p {
