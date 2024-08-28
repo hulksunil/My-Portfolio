@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Anchor, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
-import { IoMdMail } from "react-icons/io";
+import { IoMail } from "react-icons/io5";
 import { TiLocationOutline } from "react-icons/ti";
 
 /**
@@ -50,17 +50,18 @@ const Contact = () => {
             sure to get back to you!
           </p>
           <div className="d-flex contactInfo">
-            <IoMdMail size={"30px"} />
-            <p>sunil.kub17@gmail.com</p>
-          </div>
-          <div className="d-flex contactInfo">
             <FiPhoneCall size={"30px"} />
             <p>514-770-4765</p>
           </div>
           <div className="d-flex contactInfo">
-            <TiLocationOutline size={"30px"} />
-            <p>QC, Montreal</p>
+            <IoMail size={"30px"} />
+            <p>sunil.kub17@gmail.com</p>
           </div>
+          <div className="d-flex contactInfo">
+            <TiLocationOutline size={"30px"} />
+            <p>Montréal, Quebec, Canada</p>
+          </div>
+
           <div className="socials">
             <Anchor
               className="text-reset"
