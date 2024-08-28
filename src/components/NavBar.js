@@ -13,6 +13,14 @@ const CustomNavLink = ({ href, activeLink, setActiveLink }) => {
   );
 };
 
+/**
+ * NavBar component
+ * Displays the navbar at the top of the page with links to different sections
+ * The navbar is sticky and changes color when scrolled
+ * The navbar also has a toggle button for mobile
+ *
+ * TODO(sunil): Add social media links (github, linkedin, etc.) (otherwise add them in intro)
+ */
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -70,6 +78,11 @@ const NavBar = () => {
             />
             <CustomNavLink
               href="projects"
+              activeLink={activeLink}
+              setActiveLink={setActiveLink}
+            />
+            <CustomNavLink
+              href="experience"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />

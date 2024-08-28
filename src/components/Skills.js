@@ -2,15 +2,25 @@ import { Container } from "react-bootstrap";
 
 const Skills = () => {
   return (
-    <Container id="skills" className="skills">
+    <Container id="skills" className="skills mainHeader">
       <h1>Skills</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        vestibulum, ipsum nec aliquam lacinia, nunc urna ultricies nisl, vitae
-        rhoncus nisl risus nec nunc. Nullam ac nunc in nisi ultricies
-        sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec nunc
-        ultricies sollicitudin. Nullam nec ultricies turpis. Nullam nec nunc nec
-        nunc ultricies sollicitudin. Nullam nec ultricies turpis.
+        <b>Programming:</b> Java, Python, C#, Kotlin, JavaScript/TypeScript,
+        Bash Scripting, 80x86 Assembly, VHDL
+      </p>
+
+      <p>
+        <b>Web Development:</b> HTML, CSS, ReactJS, NodeJS, Spring Boot
+      </p>
+      <p>
+        <b>Databases:</b> SQL, MongoDB, Firestore
+      </p>
+      <p>
+        <b>Tools:</b> Git, Junit, Swagger, Jest, UML, VS Code, IntelliJ,
+        Microsoft Office: Word-Excel -PPT
+      </p>
+      <p>
+        <b>Languages:</b> English, French
       </p>
     </Container>
   );

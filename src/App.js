@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import bouncingBall from "./assets/img/bouncing-ball.gif";
 import carsRUs from "./assets/img/cars-r-us.gif";
 import portfolio from "./assets/img/portfolio.gif";
+import Footer from "./components/Footer";
+import Experience from "./components/Experience";
 
 const projects = [
   {
@@ -43,9 +45,10 @@ function App() {
       <NavBar />
       <Intro />
       <Projects projects={projects} />
-
+      <Experience />
       <Skills />
       <Contact />
+      <Footer />
     </div>
   );
 }

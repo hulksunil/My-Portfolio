@@ -23,9 +23,14 @@ function ProjectCard({ title, description, tags, link, img }) {
   );
 }
 
+/**
+ * Projects component
+ * Displays the projects that I have worked on
+ * TODO(sunil): Add more projects after touching them up a bit(optional)
+ */
 const Projects = ({ projects }) => {
   return (
-    <Container fluid id="projects" className="projects">
+    <Container fluid id="projects" className="projects mainHeader">
       <h1>Projects</h1>
       <p>
         I love working on projects! Here are some of the projects that I have

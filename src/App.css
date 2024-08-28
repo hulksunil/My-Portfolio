@@ -125,12 +125,14 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 /** projects **/
-.projects {
+.mainHeader h1 {
+  font-size: 3.5em;
   text-align: center;
+  padding-top: 3em;
 }
 
-.projects h1 {
-  font-size: 3.5em;
+.projects {
+  text-align: center;
 }
 
 .projects p {
@@ -143,6 +145,12 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   margin: 1em;
   border-radius: 10px !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1.5);
+  transition: 0.32s ease-in-out;
+}
+
+.projectCard:hover {
+  scale: 1.03;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.5);
 }
 
 .projectCard .card-title {
@@ -164,6 +172,35 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
   background-color: var(--secondary-color) !important;
   color: var(--text-color) !important;
+}
+
+/** contact **/
+.contact > .row {
+  padding: 3em;
+}
+
+.contact p {
+  font-size: 20px;
+}
+
+.contactInfo p {
+  padding-left: 1em;
+}
+
+.contact form input {
+  width: 100%;
+}
+
+.socials a {
+  margin: 0 0.5em 0 0;
+}
+
+/** footer **/
+footer {
+  text-align: center;
+  font-size: 16px;
+  color: var(--secondary-text-color);
+  font-weight: 300;
 }
 
 /* 

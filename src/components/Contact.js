@@ -1,10 +1,117 @@
-import { Container } from "react-bootstrap";
+import { useState } from "react";
+import { Anchor, Button, Col, Container, Form, Row } from "react-bootstrap";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FiPhoneCall } from "react-icons/fi";
+import { IoMdMail } from "react-icons/io";
+import { MdAlternateEmail } from "react-icons/md";
+import { TiLocationOutline } from "react-icons/ti";
 
+/**
+ * Contact component
+ * Displays the contact information and a form to send me a message
+ *
+ * TODO(sunil): Add other social media links under email (github, linkedin, etc.)
+ */
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "6ba159bd-7e42-4013-bda1-82f8bd4dd954");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
   return (
-    <Container id="contact">
+    <Container fluid id="contact" className="contact mainHeader">
       <h1>Contact</h1>
-      <p>Send us a message!</p>
+      <Row>
+        {/* Contact Info */}
+
+        <Col xs={12} md={6}>
+          <h2>Let's Talk</h2>
+          <p>
+            I'm currently studying at school but send me a message and I'll be
+            sure to get back to you!
+          </p>
+          <div className="d-flex contactInfo">
+            <IoMdMail size={"30px"} />
+            <p>sunil.kub17@gmail.com</p>
+          </div>
+          <div className="d-flex contactInfo">
+            <FiPhoneCall size={"30px"} />
+            <p>514-770-4765</p>
+          </div>
+          <div className="d-flex contactInfo">
+            <TiLocationOutline size={"30px"} />
+            <p>QC, Montreal</p>
+          </div>
+          <div className="socials">
+            <Anchor href="https://github.com/hulksunil" target="_blank">
+              <FaGithub size={"30px"} />
+            </Anchor>
+            <Anchor
+              href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
+              target="_blank"
+            >
+              <FaLinkedin size={"30px"} />
+            </Anchor>
+          </div>
+        </Col>
+
+        {/* Right column  */}
+        <Col xs={12} md={6}>
+          <Form data-bs-theme="dark" onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="name">
+              <Form.Label>Your Name</Form.Label>
+              <Form.Control
+                name="name"
+                required
+                type="text"
+                placeholder="Enter your name"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="emailAddress">
+              <Form.Label>Your Email Address</Form.Label>
+              <Form.Control
+                name="email"
+                required
+                type="email"
+                placeholder="Enter your email"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="emailMessage">
+              <Form.Label>Your Message</Form.Label>
+              <Form.Control
+                name="message"
+                required
+                as="textarea"
+                placeholder="Enter your message"
+                rows={8}
+              />
+            </Form.Group>
+            <Button type="submit" variant="light">
+              Send
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 };
