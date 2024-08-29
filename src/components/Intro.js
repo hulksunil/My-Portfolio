@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Anchor, Button, Col, Container, Row } from "react-bootstrap";
+import { FcViewDetails } from "react-icons/fc";
+
+import CV from "../assets/Sunil_Kublalsingh.pdf";
 
 const TypingThing = ({ toRotate }) => {
   const [loopNum, setLoopNum] = useState(0);
@@ -65,6 +68,16 @@ const Intro = () => {
               Driven by curiosity and a desire to innovate, with the goal of
               contributing to cutting-edge technologies that shape the future.
             </p>
+            <Anchor
+              className="text-reset text-decoration-none"
+              href={CV}
+              target="_blank"
+            >
+              {/* <FcViewDetails size={20} /> */}
+              <Button variant="dark" style={{ fontSize: "20px" }}>
+                Resume
+              </Button>
+            </Anchor>
           </div>
         </Col>
       </Row>
