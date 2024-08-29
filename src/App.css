@@ -177,6 +177,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 /** contact **/
 .contact > .row {
   padding: 3em;
+  padding-top: 0;
 }
 
 .contact > .row > * {
