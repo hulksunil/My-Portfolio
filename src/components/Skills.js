@@ -16,7 +16,7 @@ const Skills = () => {
         <b>Databases:</b> SQL, MongoDB, Firestore
       </p>
       <p>
-        <b>Tools:</b> Git, Junit, Swagger, Jest, UML, VS Code, IntelliJ,
+        <b>Tools:</b> Git, JUnit, Swagger, Jest, UML, VS Code, IntelliJ,
         Microsoft Office: Word-Excel -PPT
       </p>
       <p>

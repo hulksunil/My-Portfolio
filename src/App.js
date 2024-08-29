@@ -2,15 +2,16 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Intro from "./components/Intro";
+import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 import bouncingBall from "./assets/img/bouncing-ball.gif";
 import carsRUs from "./assets/img/cars-r-us.gif";
 import portfolio from "./assets/img/portfolio.gif";
-import Footer from "./components/Footer";
-import Experience from "./components/Experience";
+import hovercraftProject from "./assets/img/hovercraft-project-5.gif";
 
 const projects = [
   {
@@ -29,6 +30,15 @@ const projects = [
     link: "https://github.com/hulksunil/Error_404-soen341projectW2024",
     img: carsRUs,
   },
+  {
+    title: "Hovercraft Project",
+    description:
+      "Designed by a team of 4, this hovercraft was created using an arduino, some fans and a few sensors. It was engineered to autonomously navigate through a maze without any external assistance. ",
+    tags: ["Arduino", "C++", "Hardware Project", "Team Leader of 4"],
+    link: "", // No link yet (private repo)
+    img: hovercraftProject,
+  },
+
   {
     title: "Portfolio Website",
     description:
