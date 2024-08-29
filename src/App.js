@@ -33,7 +33,7 @@ const projects = [
   {
     title: "Hovercraft Project",
     description:
-      "Designed by a team of 4, this hovercraft was created using an arduino, some fans and a few sensors. It was engineered to autonomously navigate through a maze without any external assistance. ",
+      "Designed by a team of 4, this hovercraft was created using an Arduino, some powerful fans and a couple sensors for guidance and control. It was engineered to autonomously navigate through a maze without any external assistance. ",
     tags: ["Arduino", "C++", "Hardware Project", "Team Leader of 4"],
     link: "", // No link yet (private repo)
     img: hovercraftProject,
