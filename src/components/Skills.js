@@ -17,7 +17,7 @@ const Skills = () => {
       </p>
       <p>
         <b>Tools:</b> Git, JUnit, Swagger, Jest, UML, VS Code, IntelliJ,
-        Microsoft Office: Word-Excel -PPT
+        Microsoft Office: Word-Excel-PPT
       </p>
       <p>
         <b>Languages:</b> English, French

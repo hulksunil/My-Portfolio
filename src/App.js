@@ -8,10 +8,10 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import bouncingBall from "./assets/img/bouncing-ball.gif";
-import carsRUs from "./assets/img/cars-r-us.gif";
-import portfolio from "./assets/img/portfolio.gif";
-import hovercraftProject from "./assets/img/hovercraft-project-5.gif";
+import bouncingBall from "./assets/img/projects/bouncing-ball.gif";
+import carsRUs from "./assets/img/projects/cars-r-us.gif";
+import hovercraftProject from "./assets/img/projects/hovercraft-project-5.gif";
+import portfolio from "./assets/img/projects/portfolio.gif";
 
 const projects = [
   {
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "Created using ReactJS and bootstrap, this website is the one you see here! It showcases who I am and what I've done 😁",
+      "Created using ReactJS and Bootstrap, this website is the one you see here! It showcases who I am and what I've done 😁",
     tags: ["ReactJS", "Bootstrap", "Solo Project"],
     link: "https://github.com/hulksunil/My-Portfolio",
     img: portfolio,
