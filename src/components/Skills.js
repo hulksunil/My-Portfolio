@@ -13,6 +13,7 @@ const Skills = () => {
       "Java",
       "Python",
       "C#",
+      "C++",
       "Kotlin",
       "JavaScript/TypeScript",
       "Bash Scripting",
@@ -23,8 +24,8 @@ const Skills = () => {
     Databases: ["SQL", "MongoDB", "Firestore"],
     Tools: [
       "Git",
-      "JUnit",
       "Swagger",
+      "JUnit",
       "Jest",
       "UML",
       "VS Code",

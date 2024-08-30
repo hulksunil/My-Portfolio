@@ -1,41 +1,23 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, ListGroup, Row } from "react-bootstrap";
-// import { useInView } from "react-intersection-observer";
-
-// const TypePhrase = ({ phrase }) => {
-//   const [text, setText] = useState("");
-//   const milisecondsPerLetter = 10;
-//   // const milisecondsPerLetter = phrase.length / 16;
-
-//   useEffect(() => {
-//     let ticker = setInterval(() => {
-//       tick();
-//     }, milisecondsPerLetter);
-
-//     return () => {
-//       clearInterval(ticker);
-//     };
-//   }, [text]);
-
-//   const tick = () => {
-//     let newText = phrase.substring(0, text.length + 1); // if not deleting, then add one character
-//     setText(newText);
-//   };
-//   return <span> {text}</span>;
-// };
+import { useInView } from "react-intersection-observer";
 
 const ExperienceEntry = ({ exp, index }) => {
-  // const { ref: experienceRef, inView: experienceIsVisible } = useInView();
-  // const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const { ref: experienceRef, inView: experienceIsVisible } = useInView();
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
-  // useEffect(() => {
-  //   if (experienceIsVisible) {
-  //     setHasBeenVisible(true);
-  //   }
-  // }, [experienceIsVisible]);
+  useEffect(() => {
+    if (experienceIsVisible) {
+      setHasBeenVisible(true);
+    }
+  }, [experienceIsVisible]);
 
   return (
-    <Row className="mb-4" key={index}>
+    <Row
+      ref={experienceRef}
+      className={`mb-4 fade-in-section ${hasBeenVisible ? "is-visible" : ""}`}
+      key={index}
+    >
       <Col>
         <h4 className="text-light">{exp.company}</h4>
         <p>
@@ -44,11 +26,7 @@ const ExperienceEntry = ({ exp, index }) => {
         </p>
         <ListGroup variant="flush">
           {exp.points.map((point, i) => (
-            <ListGroup.Item
-              // ref={experienceRef}
-              key={i}
-              className="bg-dark text-white border-light"
-            >
+            <ListGroup.Item key={i} className="bg-dark text-white border-light">
               {/* {hasBeenVisible && <TypePhrase phrase={point} />} */}
               {point}
             </ListGroup.Item>
