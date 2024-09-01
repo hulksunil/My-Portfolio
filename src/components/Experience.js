@@ -6,6 +6,7 @@ const ExperienceEntry = ({ exp, index }) => {
   const { ref: experienceRef, inView: experienceIsVisible } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
+  // This is so that the fade-in animation only happens once
   useEffect(() => {
     if (experienceIsVisible) {
       setHasBeenVisible(true);
@@ -74,6 +75,26 @@ const Experience = () => {
       location: "Remote",
       points: [
         "Collaborated with team members to develop an inventory system for a sneaker retailer using ReactJS to create web pages with a database in Firestore.",
+      ],
+    },
+    {
+      company: "English Montreal School Board (EMSB)",
+      role: "Maintenance Workman",
+      duration: "Summers 2018 – 2021",
+      location: "Montréal, QC",
+      points: [
+        "Worked closely with a team to perform thorough cleaning and maintenance of school facilities achieving high standards of cleanliness and readiness for the new school year.",
+        "Executed tasks under the direction of the head caretaker, including stripping and waxing floors, and efficiently relocating furniture and desks between classrooms.",
+      ],
+    },
+    {
+      company: "Dawson College",
+      role: "Peer Tutor",
+      duration: "2019 – 2020",
+      location: "Montréal, QC",
+      points: [
+        "Tutored students in courses I had previously completed, including linear algebra, HTML, and Java.",
+        "Supported students in preparing for tests and final exams.",
       ],
     },
   ];
