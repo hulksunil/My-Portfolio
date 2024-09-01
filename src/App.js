@@ -12,6 +12,7 @@ import bouncingBall from "./assets/img/projects/bouncing-ball.gif";
 import carsRUs from "./assets/img/projects/cars-r-us.gif";
 import hovercraftProject from "./assets/img/projects/hovercraft-project-5.gif";
 import portfolio from "./assets/img/projects/portfolio.gif";
+import emailClient from "./assets/img/projects/emailClient.gif";
 
 const projects = [
   {
@@ -38,7 +39,14 @@ const projects = [
     link: "", // No link yet (private repo)
     img: hovercraftProject,
   },
-
+  {
+    title: "Email Client",
+    description:
+      "Developed a feature-rich email client with a SMTP and IMAP protocol capabilities using the Jodd API.",
+    tags: ["JavaFX", "MySQL", "Jodd", "Solo Project"],
+    link: "https://github.com/hulksunil/My-Portfolio",
+    img: emailClient,
+  },
   {
     title: "Portfolio Website",
     description:
