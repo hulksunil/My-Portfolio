@@ -44,7 +44,7 @@ const projects = [
     description:
       "Developed a feature-rich email client with a SMTP and IMAP protocol capabilities using the Jodd API.",
     tags: ["JavaFX", "MySQL", "Jodd", "Solo Project"],
-    link: "https://github.com/hulksunil/My-Portfolio",
+    link: "https://gitlab.com/headbandSunil/java-application-for-gmail/-/tree/master?ref_type=heads",
     img: emailClient,
   },
   {
