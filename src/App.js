@@ -13,8 +13,16 @@ import carsRUs from "./assets/img/projects/cars-r-us.gif";
 import hovercraftProject from "./assets/img/projects/hovercraft-project-5.gif";
 import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
+import airzen from "./assets/img/projects/airzen.gif";
 
-const projects = [
+const projects = [ {
+    title: "AirZen",
+    description:
+      "A device developed to provide insights into air quality metrics empowering users to breathe easy with peace of mind",
+    tags: ["ESP32", "Android Studio","Hardware Project", "Java", "C++", "Firebase Realtime Database", "Team Leader of 6"],
+    link: "https://github.com/hulksunil/AirZen",
+    img: airzen,
+  },
   {
     title: "Bouncing Ball",
     description:
