@@ -85,14 +85,14 @@ const Intro = () => {
                 href="https://github.com/hulksunil"
                 target="_blank"
               >
-                <FaGithub size={"30px"} />
+                <FaGithub className="iconGitHub" size={"30px"} />
               </Anchor>
               <Anchor
                 className="text-reset"
                 href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
                 target="_blank"
               >
-                <FaLinkedin size={"30px"} />
+                <FaLinkedin className="iconLinkedIn" size={"30px"} />
               </Anchor>
             </div>
           </div>

@@ -3,6 +3,8 @@
   --secondary-color: #000;
   --text-color: #fff;
   --secondary-text-color: #ababab;
+  --linkedin-color: #00a4fc;
+  --github-color: #f4cab1;
 }
 
 ::-webkit-scrollbar {
@@ -78,11 +80,14 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   padding: 5px 25px;
   font-size: 18px;
   opacity: 0.75;
+  transition: ease-out 0.3s;
+
 }
 
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
+  scale: 1.05;
 }
 
 /* .toggled {
@@ -122,6 +127,26 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   margin-top: 1em;
   color: var(--secondary-text-color);
   letter-spacing: 2px;
+}
+
+.iconGitHub {
+  color: white;
+  transition: ease-out 0.32s;
+}
+
+.iconGitHub:hover {
+  color: var(--github-color);
+  scale: 1.2;
+}
+
+.iconLinkedIn {
+  color: white;
+  transition: ease-out 0.32s;
+}
+
+.iconLinkedIn:hover {
+  color:var(--linkedin-color);
+  scale: 1.2;
 }
 
 /** projects **/
@@ -178,6 +203,12 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .skillCard {
   background-color: var(--primary-color) !important;
   opacity: 0.88;
+  transition: 0.32s ease-in-out;
+}
+
+.skillCard:hover {
+  scale: 1.03;
+  box-shadow: 2px 2px 20px rgba(215, 134, 134, 0.297);
 }
 
 .skillCard ul {
