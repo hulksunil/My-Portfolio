@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -71,8 +72,16 @@ const projects = [{
 },
 ];
 
+
+
 function App() {
+
+
+
+
   return (
+
+
     <div className="App">
       <div style={{ display: "none" }}>
         Sunil Kublalsingh
@@ -82,14 +91,22 @@ function App() {
         Sunil Kublalsingh
         Sunil Kublalsingh
       </div>
-      <NavBar />
-      <Intro />
-      <Experience />
-      <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
-      <Skills />
-      <Contact />
-      <Footer />
+
+
+
+      <>
+        <NavBar />
+        <Intro />
+        <Experience />
+        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
+        <Skills />
+        <Contact />
+        <Footer />
+      </>
+
     </div>
+
+
   );
 }
 
