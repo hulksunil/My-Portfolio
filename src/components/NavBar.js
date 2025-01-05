@@ -21,7 +21,6 @@ const CustomNavLink = ({ href, activeLink, setActiveLink }) => {
  * The navbar is sticky and changes color when scrolled
  * The navbar also has a toggle button for mobile
  *
- * TODO(sunil): Add social media links (github, linkedin, etc.) (otherwise add them in intro)
  */
 const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");

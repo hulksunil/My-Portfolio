@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        © 2024 Sunil Kublalsingh.
+        © 2025 Sunil Kublalsingh.
         <br />
         All rights reserved.
       </p>
