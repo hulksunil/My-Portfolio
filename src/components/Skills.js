@@ -36,11 +36,11 @@ const Skills = () => {
   };
 
   const skillIcons = {
-    Programming: <FaCode />,
-    "Web Development": <FaGlobe />,
-    Databases: <FaDatabase />,
-    Tools: <FaTools />,
-    Languages: <FaLanguage />,
+    Programming: <FaCode className="hoverIcon" />,
+    "Web Development": <FaGlobe className="hoverIcon" />,
+    Databases: <FaDatabase className="hoverIcon" />,
+    Tools: <FaTools className="hoverIcon" />,
+    Languages: <FaLanguage className="hoverIcon" />,
   };
 
   return (
@@ -52,7 +52,7 @@ const Skills = () => {
             <Card className="skillCard text-light h-100">
               <Card.Body>
                 <Card.Title className="d-flex align-items-center">
-                  {skillIcons[category]}{" "}
+                  {skillIcons[category]}
                   <span className="ms-2">{category}</span>
                 </Card.Title>
                 <ul className="list-unstyled">

@@ -8,7 +8,7 @@
   /* --accent_color: #1866a5; */
   --accent_color: #1a262c;
   /* --accent_color_dark: #051a27;  */
-  --accent_color_dark: #000e15; 
+  --accent_color_dark: #000e15;
 }
 
 ::-webkit-scrollbar {
@@ -16,16 +16,20 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e1e1e; /* Match this to your dark background color */
+  background: #1e1e1e;
+  /* Match this to your dark background color */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555; /* Slightly lighter than the background for contrast */
-  border-radius: 4px; /* Rounded edges for a smooth, clean look */
+  background: #555;
+  /* Slightly lighter than the background for contrast */
+  border-radius: 4px;
+  /* Rounded edges for a smooth, clean look */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #888; /* Slightly lighter on hover for better visibility */
+  background: #888;
+  /* Slightly lighter on hover for better visibility */
 }
 
 html {
@@ -71,7 +75,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20%;
-  transition: opacity 0.1s linear,visibility .5s linear;
+  transition: opacity 0.1s linear, visibility .5s linear;
 }
 
 .loader_icon_none {
@@ -139,6 +143,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   from {
     border: none;
   }
+
   to {
     border-right: 0.08em solid #666;
   }
@@ -172,7 +177,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .iconLinkedIn:hover {
-  color:var(--linkedin-color);
+  color: var(--linkedin-color);
   scale: 1.2;
 }
 
@@ -242,6 +247,15 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: #ccc;
 }
 
+.skillCard .hoverIcon {
+  transition: 1.5s ease-in-out;
+}
+
+.skillCard:hover .hoverIcon {
+  /* transform: rotate3d(0, 1, 1, 360deg); */
+  transform: rotateY(360deg);
+}
+
 .tech-icons {
   font-size: 4.5em !important;
   margin: 15px !important;
@@ -260,16 +274,16 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 
 /** contact **/
-.contact > .row {
+.contact>.row {
   padding: 3em;
   padding-top: 0;
 }
 
-.contact > .row > * {
+.contact>.row>* {
   margin-top: 1em;
 }
 
-.contact > .row h2 {
+.contact>.row h2 {
   display: inline-block;
   background: linear-gradient(to right, #70a5bd, #b7bbbd);
   background-clip: text;
@@ -313,6 +327,7 @@ footer {
   transition: opacity 0.6s ease-out, transform 1.2s ease-out;
   will-change: opacity, visibility;
 }
+
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
