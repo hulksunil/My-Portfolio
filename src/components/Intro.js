@@ -49,13 +49,14 @@ const TypingThing = ({ toRotate }) => {
       setIsDeleting(false);
       setDelta(100);
       setLoopNum(loopNum + 1);
+      setText("\u00A0");
     }
   };
   return <span className="typingText"> {text}</span>;
 };
 
 const Intro = () => {
-  const toRotate = ["Full Stack Developer", "Coder", "Computer Engineer"];
+  const toRotate = ["Full Stack Developer", "Tech Enthusiast", "Computer Engineer", "Innovator"];
   return (
     <Container id="home" className="container-fluid" style={{ margin: "0" }}>
       <Row className="align-items-center">
