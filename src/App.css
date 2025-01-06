@@ -334,6 +334,19 @@ footer {
   visibility: visible;
 }
 
+
+.flash-in-section {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.9s ease-out;
+  will-change: opacity, visibility;
+}
+
+.flash-in-section.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* 
 span.navbar-text {
   display: flex;
