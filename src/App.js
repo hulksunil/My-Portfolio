@@ -15,6 +15,7 @@ import hovercraftProject from "./assets/img/projects/hovercraft-project-5.gif";
 import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
 import airzen from "./assets/img/projects/airzen.gif";
+import Techstack from "./components/Techstack";
 
 const projects = [{
   title: "AirZen",
@@ -72,10 +73,28 @@ const projects = [{
 },
 ];
 
+const Loader = ({ load }) => {
+  return (
+
+    <div className="loader">
+      <div className={load ? "loader_icon" : "loader_icon loader_icon_none"}></div>
+    </div>
+
+  );
+}
+
 
 
 function App() {
+  const [load, upadateLoad] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      upadateLoad(false);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
 
 
@@ -92,7 +111,7 @@ function App() {
         Sunil Kublalsingh
       </div>
 
-
+      <Loader load={load} />
 
       <>
         <NavBar />
@@ -100,6 +119,7 @@ function App() {
         <Experience />
         <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
         <Skills />
+        {/* <Techstack /> */}
         <Contact />
         <Footer />
       </>

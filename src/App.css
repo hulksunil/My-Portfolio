@@ -5,6 +5,10 @@
   --secondary-text-color: #ababab;
   --linkedin-color: #00a4fc;
   --github-color: #f4cab1;
+  /* --accent_color: #1866a5; */
+  --accent_color: #1a262c;
+  /* --accent_color_dark: #051a27;  */
+  --accent_color_dark: #000e15; 
 }
 
 ::-webkit-scrollbar {
@@ -53,6 +57,29 @@ button {
   border: 0;
   background-color: transparent;
 }
+
+/************ Loader Css ************/
+.loader_icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: #0c0513;
+  background-image: url(./assets/img/loader.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  transition: opacity 0.1s linear,visibility .5s linear;
+}
+
+.loader_icon_none {
+  visibility: hidden;
+  opacity: 0;
+}
+
+
 
 /************ Navbar Css ************/
 nav.navbar {
@@ -214,6 +241,23 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .skillCard ul {
   color: #ccc;
 }
+
+.tech-icons {
+  font-size: 4.5em !important;
+  margin: 15px !important;
+  padding: 10px !important;
+  opacity: 0.83 !important;
+  border: 1.7px solid var(--accent_color) !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  border-radius: 5px !important;
+  display: table !important;
+  box-shadow: 4px 5px 4px 3px var(--accent_color_dark) !important;
+  overflow: hidden !important;
+  background-color: var(--secondary-color);
+  transition: all 0.4s ease 0s !important;
+}
+
 
 /** contact **/
 .contact > .row {
