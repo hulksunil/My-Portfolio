@@ -235,7 +235,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .skillCard {
   background-color: var(--primary-color) !important;
   opacity: 0.88;
-  transition: 0.32s ease-in-out;
+  transition: scale 0.32s ease-in-out;
 }
 
 .skillCard:hover {
@@ -254,6 +254,11 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .skillCard:hover .hoverIcon {
   /* transform: rotate3d(0, 1, 1, 360deg); */
   transform: rotateY(360deg);
+}
+
+.skillCard.flash-in-section {
+  transition: scale 0.32s, opacity 1s, visibility 0.5s;
+  transition-timing-function: ease-in-out;
 }
 
 .tech-icons {
@@ -338,7 +343,8 @@ footer {
 .flash-in-section {
   opacity: 0;
   visibility: hidden;
-  transition: all 0.9s ease-out;
+  transition: opacity 2.5s, visibility 0.9s;
+  transition-timing-function: ease-out;
   will-change: opacity, visibility;
 }
 
