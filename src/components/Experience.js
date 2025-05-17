@@ -48,6 +48,17 @@ const ExperienceEntry = ({ exp, index }) => {
 const Experience = () => {
   const experiences = [
     {
+      company: "Transperfect",
+      role: "Language Data Annotator",
+      duration: "Apr 2025 - Present",
+      location: "Remote",
+      points: [
+        "Labeled and classified English language audio and text data to support the development and training of AI systems, including emotion and sentiment recognition models.",
+        "Identified emotional nuances in spoken English, annotated linguistic patterns, and flagged inconsistencies to improve model accuracy and training datasets.",
+        "Met daily quality and performance benchmarks (KPIs) while adapting quickly to shifting priorities and maintaining high standards of data integrity and consistency.",
+      ],
+    },
+    {
       company: "Morgan Stanley",
       role: "Software Developer (Internship)",
       duration: "May 2024 - Aug 2024",
