@@ -50,7 +50,7 @@ const Experience = () => {
     {
       company: "Transperfect",
       role: "Language Data Annotator",
-      duration: "Apr 2025 - Present",
+      duration: "Apr 2025 - Aug 2025",
       location: "Remote",
       points: [
         "Labeled and classified English language audio and text data to support the development and training of AI systems, including emotion and sentiment recognition models.",

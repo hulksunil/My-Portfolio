@@ -15,9 +15,19 @@ import hovercraftProject from "./assets/img/projects/hovercraft-project-5.gif";
 import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
 import airzen from "./assets/img/projects/airzen.gif";
+import pcRemote from "./assets/img/projects/pc-remote.gif";
 import Techstack from "./components/Techstack";
 
 const projects = [{
+  title: "PC-Remote",
+  description:
+    "A client-server application that lets users control their PC from a mobile device with mouse input, media controls, and system power options, built on TCP and UDP sockets.",
+  tags: ["Flutter", "Go", "TCP", "UDP", "Sockets", "Windows", "macOS", "Solo Project"],
+  link: "https://github.com/hulksunil/PC-Remote",
+  dateDeveloped: new Date("2025-08-01"),
+  img: pcRemote,
+},
+{
   title: "AirZen",
   description:
     "A device developed to provide insights into air quality metrics empowering users to breathe easy with peace of mind",
