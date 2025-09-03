@@ -438,3 +438,51 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 } */
+
+.timeline-item {
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 2rem;
+  border-left: 2px solid #6c757d;
+  /* vertical line */
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 10px;
+  width: 16px;
+  height: 16px;
+  background-color: #6c757d;
+  border-radius: 50%;
+}
+
+.timeline-card {
+  margin-bottom: 2rem;
+}
+
+/* Fade-in effect */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: auto;
+  margin-right: 2rem;
+  padding-left: 0;
+  padding-right: 2rem;
+  border-left: none;
+  border-right: 2px solid #6c757d;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: auto;
+  right: -9px;
+}

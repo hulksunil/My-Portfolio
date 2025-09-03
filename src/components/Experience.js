@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Col, Container, ListGroup, Row, Badge, Card } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 
 const ExperienceEntry = ({ exp, index }) => {
   const { ref: experienceRef, inView: experienceIsVisible } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
-  // This is so that the fade-in animation only happens once
   useEffect(() => {
     if (experienceIsVisible) {
       setHasBeenVisible(true);
@@ -14,27 +13,28 @@ const ExperienceEntry = ({ exp, index }) => {
   }, [experienceIsVisible]);
 
   return (
-    <Row
+    <div
       ref={experienceRef}
-      className={`mb-4 fade-in-section ${hasBeenVisible ? "is-visible" : ""}`}
+      className={`timeline-item fade-in-section ${hasBeenVisible ? "is-visible" : ""
+        }`}
       key={index}
     >
-      <Col>
-        <h4 className="text-light">{exp.company}</h4>
-        <p>
-          <strong className="text-secondary">{exp.role}</strong> |{" "}
-          {exp.duration} | {exp.location}
-        </p>
-        <ListGroup variant="flush">
-          {exp.points.map((point, i) => (
-            <ListGroup.Item key={i} className="bg-dark text-white border-light">
-              {/* {hasBeenVisible && <TypePhrase phrase={point} />} */}
-              {point}
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      </Col>
-    </Row>
+      <div className="timeline-dot" />
+      <Card className="bg-dark text-white shadow-lg rounded-3 mb-4 timeline-card">
+        <Card.Body>
+          <h4>{exp.company}</h4>
+          <p>
+            <strong className="text-secondary">{exp.role}</strong> |{" "}
+            {exp.duration} | {exp.location}
+          </p>
+          <ul>
+            {exp.points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </Card.Body>
+      </Card>
+    </div>
   );
 };
 
