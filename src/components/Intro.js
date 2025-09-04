@@ -4,15 +4,18 @@ import { FcViewDetails } from "react-icons/fc";
 
 import CV from "../assets/Sunil_Kublalsingh.pdf";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 
-const TypingThing = ({ toRotate }) => {
+const TypingThing = ({ toRotate, active }) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState("");
+  const [text, setText] = useState("\u00A0");
   const [delta, setDelta] = useState(200);
   const period = 500;
 
   useEffect(() => {
+    if (!active) return; // pause updates when not active
+
     let ticker = setInterval(() => {
       tick();
     }, delta);
@@ -20,7 +23,7 @@ const TypingThing = ({ toRotate }) => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text]);
+  }, [text, active]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -56,6 +59,8 @@ const TypingThing = ({ toRotate }) => {
 };
 
 const Intro = () => {
+  const { ref: introRef, inView: introIsVisible } = useInView();
+
   const toRotate = ["Full Stack Developer", "Tech Enthusiast", "Computer Engineer", "Innovator"];
   return (
     <Container id="home" className="container-fluid" style={{ margin: "0" }}>
@@ -65,8 +70,8 @@ const Intro = () => {
             <h1>
               Hi! I'm <span id="myName">Sunil</span>
             </h1>
-            <TypingThing toRotate={toRotate} />
-            <p className="bio">
+            <TypingThing toRotate={toRotate} active={introIsVisible} />
+            <p className="bio" ref={introRef}>
               Driven by curiosity and a desire to innovate, with the goal of
               contributing to cutting-edge technologies that shape the future.
             </p>

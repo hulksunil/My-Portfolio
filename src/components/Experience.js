@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Col, Container, ListGroup, Row, Badge, Card } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 
 const ExperienceEntry = ({ exp, index }) => {
