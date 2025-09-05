@@ -27,7 +27,7 @@ import {
   SiMongodb,
   SiGooglecloud,
   SiSwagger,
-  SiVisualstudio,
+  SiVisualstudiocode,
   SiIntellijidea,
   SiUml,
   SiGo,
@@ -116,7 +116,7 @@ const Skills = () => {
     "Tools & Platforms": [
       { name: "Git", icon: <FaGitAlt /> },
       { name: "Swagger", icon: <SiSwagger /> },
-      { name: "VS Code", icon: <SiVisualstudio /> },
+      { name: "VS Code", icon: <SiVisualstudiocode /> },
       { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
       { name: "UML", icon: <SiUml /> },
     ],
