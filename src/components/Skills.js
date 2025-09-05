@@ -4,81 +4,135 @@ import {
   FaCode,
   FaDatabase,
   FaGlobe,
-  FaLanguage,
   FaTools,
+  FaCogs,
+  FaLanguage,
+  FaJava,
+  FaPython,
+  FaCuttlefish, // fallback for C#
+  FaJs,
+  FaGitAlt,
+  FaMicrochip, // assembly
 } from "react-icons/fa";
+import {
+  SiCplusplus,
+  SiTypescript,
+  SiKotlin,
+  SiGnubash,
+  SiReact,
+  SiNodedotjs,
+  SiSpringboot,
+  SiJunit5,
+  SiJest,
+  SiMongodb,
+  SiGooglecloud,
+  SiSwagger,
+  SiVisualstudiocode,
+  SiIntellijidea,
+  SiUml,
+} from "react-icons/si";
 import { useInView } from "react-intersection-observer";
-
-
 
 const SkillCard = ({ skillIcons, category, skillList }) => {
   const { ref: skillRef, inView: skillIsVisible } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
-  // This is so that the fade-in animation only happens once
   useEffect(() => {
     if (skillIsVisible) {
       setHasBeenVisible(true);
     }
   }, [skillIsVisible]);
 
-
-  return <Card ref={skillRef} className={`skillCard flash-in-section text-light h-100 ${hasBeenVisible ? "is-visible" : ""}`}>
-    <Card.Body>
-      <Card.Title className="d-flex align-items-center">
-        {skillIcons[category]}
-        <span className="ms-2">{category}</span>
-      </Card.Title>
-      <ul className="list-unstyled">
-        {skillList.map((skill) => (
-          <li key={skill}>{skill}</li>
-        ))}
-      </ul>
-    </Card.Body>
-  </Card>;
-}
-
-
+  return (
+    <Card
+      ref={skillRef}
+      className={`skillCard flash-in-section text-light h-100 ${hasBeenVisible ? "is-visible" : ""
+        }`}
+    >
+      <Card.Body>
+        <Card.Title className="d-flex align-items-center mb-3">
+          {skillIcons[category]}
+          <span className="ms-2">{category}</span>
+        </Card.Title>
+        <div className="d-flex flex-wrap gap-3">
+          {skillList.map(({ name, icon }) => (
+            <div
+              key={name}
+              className="d-flex flex-column align-items-center text-center"
+              style={{ width: "90px" }}
+            >
+              <div
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "50%",
+                  background: "rgba(255,255,255,0.1)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "1.8rem",
+                }}
+              >
+                {icon}
+              </div>
+              <small className="mt-2">{name}</small>
+            </div>
+          ))}
+        </div>
+      </Card.Body>
+    </Card>
+  );
+};
 
 const Skills = () => {
-
-
   const skills = {
-    Programming: [
-      "Java",
-      "Python",
-      "C#",
-      "C++",
-      "Kotlin",
-      "JavaScript/TypeScript",
-      "Bash Scripting",
-      "80x86 Assembly",
-      "VHDL",
+    "Programming Languages": [
+      { name: "Java", icon: <FaJava /> },
+      { name: "Python", icon: <FaPython /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "C#", icon: <FaCuttlefish /> },
+      { name: "JavaScript", icon: <FaJs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Kotlin", icon: <SiKotlin /> },
+      { name: "Bash Scripting", icon: <SiGnubash /> },
     ],
-    "Web Development": ["HTML", "CSS", "ReactJS", "NodeJS", "Spring Boot"],
-    Databases: ["SQL", "MongoDB", "Firestore"],
-    Tools: [
-      "Git",
-      "Swagger",
-      "JUnit",
-      "Jest",
-      "UML",
-      "VS Code",
-      "IntelliJ",
-      "Microsoft Office: Word-Excel-PPT",
+    "Frameworks & Libraries": [
+      { name: "ReactJS", icon: <SiReact /> },
+      { name: "NodeJS", icon: <SiNodedotjs /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "JUnit", icon: <SiJunit5 /> },
+      { name: "Jest", icon: <SiJest /> },
     ],
-    Languages: ["English", "French"],
+    Databases: [
+      { name: "SQL", icon: <FaDatabase /> },
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "Firestore", icon: <SiGooglecloud /> },
+    ],
+    "Tools & Platforms": [
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "Swagger", icon: <SiSwagger /> },
+      { name: "VS Code", icon: <SiVisualstudiocode /> },
+      { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
+      { name: "UML", icon: <SiUml /> },
+    ],
+    "Additional Knowledge": [
+      { name: "80x86 Assembly", icon: <FaMicrochip /> },
+      { name: "VHDL", icon: <FaCogs /> },
+    ],
+    Languages: [
+      { name: "English (Fluent)", icon: <FaLanguage /> },
+      { name: "French (Intermediate)", icon: <FaLanguage /> },
+    ],
   };
 
   const skillIcons = {
-    Programming: <FaCode className="hoverIcon" />,
-    "Web Development": <FaGlobe className="hoverIcon" />,
+    "Programming Languages": <FaCode className="hoverIcon" />,
+    "Frameworks & Libraries": <FaGlobe className="hoverIcon" />,
     Databases: <FaDatabase className="hoverIcon" />,
-    Tools: <FaTools className="hoverIcon" />,
+    "Tools & Platforms": <FaTools className="hoverIcon" />,
+    "Additional Knowledge": <FaCogs className="hoverIcon" />,
     Languages: <FaLanguage className="hoverIcon" />,
   };
-
-
 
   return (
     <Container className="py-5 mainHeader" id="skills">
@@ -86,14 +140,16 @@ const Skills = () => {
       <Row>
         {Object.entries(skills).map(([category, skillList]) => (
           <Col key={category} md={6} lg={4} className="mb-4">
-            <SkillCard skillIcons={skillIcons} category={category} skillList={skillList} />
+            <SkillCard
+              skillIcons={skillIcons}
+              category={category}
+              skillList={skillList}
+            />
           </Col>
         ))}
       </Row>
-    </Container >
+    </Container>
   );
 };
 
 export default Skills;
-
-
