@@ -27,7 +27,7 @@ import {
   SiMongodb,
   SiGooglecloud,
   SiSwagger,
-  SiVisualstudiocode,
+  SiVsCo,
   SiIntellijidea,
   SiUml,
   SiGo,
