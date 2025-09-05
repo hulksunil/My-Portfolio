@@ -30,6 +30,8 @@ import {
   SiVisualstudiocode,
   SiIntellijidea,
   SiUml,
+  SiGo,
+  SiFlutter,
 } from "react-icons/si";
 import { useInView } from "react-intersection-observer";
 
@@ -95,11 +97,14 @@ const Skills = () => {
       { name: "TypeScript", icon: <SiTypescript /> },
       { name: "Kotlin", icon: <SiKotlin /> },
       { name: "Bash Scripting", icon: <SiGnubash /> },
+      { name: "Go", icon: <SiGo /> },
     ],
     "Frameworks & Libraries": [
       { name: "ReactJS", icon: <SiReact /> },
       { name: "NodeJS", icon: <SiNodedotjs /> },
       { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "Flutter", icon: <SiFlutter /> },
+
       { name: "JUnit", icon: <SiJunit5 /> },
       { name: "Jest", icon: <SiJest /> },
     ],
