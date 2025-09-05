@@ -27,12 +27,12 @@ import {
   SiMongodb,
   SiGooglecloud,
   SiSwagger,
-  SiVsCo,
   SiIntellijidea,
   SiUml,
   SiGo,
   SiFlutter,
 } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { useInView } from "react-intersection-observer";
 
 const SkillCard = ({ skillIcons, category, skillList }) => {
@@ -116,7 +116,7 @@ const Skills = () => {
     "Tools & Platforms": [
       { name: "Git", icon: <FaGitAlt /> },
       { name: "Swagger", icon: <SiSwagger /> },
-      { name: "VS Code", icon: <SiVisualstudiocode /> },
+      { name: "VS Code", icon: <VscVscode /> },
       { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
       { name: "UML", icon: <SiUml /> },
     ],
