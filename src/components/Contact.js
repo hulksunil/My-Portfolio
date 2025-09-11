@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Anchor, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
@@ -11,8 +11,11 @@ import { TiLocationOutline } from "react-icons/ti";
  *
  * TODO(sunil): Add other social media links under email (github, linkedin, etc.)
  */
-const Contact = () => {
+const Contact = ({ theme }) => {
   const [result, setResult] = useState("");
+  useEffect(() => {
+    // Any side effects related to the theme can be handled here
+  }, [theme]);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -79,7 +82,7 @@ const Contact = () => {
 
         {/* Right column  */}
         <Col xs={12} md={6}>
-          <Form data-bs-theme="dark" onSubmit={onSubmit}>
+          <Form data-bs-theme={theme === "dark" ? "dark" : "light"} onSubmit={onSubmit}>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Your Name</Form.Label>
               <Form.Control
@@ -108,7 +111,7 @@ const Contact = () => {
                 rows={8}
               />
             </Form.Group>
-            <Button type="submit" variant="light">
+            <Button type="submit" variant={theme === "dark" ? "light" : "dark"}>
               Send
             </Button>
           </Form>

@@ -9,6 +9,37 @@
   --accent_color: #1a262c;
   /* --accent_color_dark: #051a27;  */
   --accent_color_dark: #000e15;
+  --tech-icon-bubble-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark Theme Background */
+.dark-theme {
+  --primary-color: #121212;
+  --secondary-color: #000;
+  --text-color: #fff;
+  --secondary-text-color: #ababab;
+  --accent_color: #1a262c;
+  --accent_color_dark: #000e15;
+
+  background-image: url("./assets/img/background-4.jpg");
+  background-color: var(--secondary-color) !important;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+/* Light Theme Background */
+.light-theme {
+  --primary-color: #ffffff;
+  --secondary-color: #f5f5f5;
+  --text-color: #121212;
+  --secondary-text-color: #555;
+  --accent_color: #e0e0e0;
+  --accent_color_dark: #ccc;
+  background-color: #bdd6fb;
+  background-image: url("./assets/img/background-light-2.jpg");
+  --tech-icon-bubble-color: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar {
@@ -38,19 +69,27 @@ html {
 }
 
 body {
-  /* font-family: "Roboto", sans-serif; */
-  overflow-x: hidden;
-  /* background-color: #121212 !important; */
-  /* background-color: #333 !important; */
-  background-color: var(--secondary-color) !important;
-  background-image: url("./assets/img/background-3.jpg");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  color: var(--text-color) !important;
   font-size: 18px;
+  color: var(--text-color) !important;
+  overflow-x: hidden;
+  transition: background-image 0.4s ease, color 0.4s ease;
 }
+
+
+
+.theme-toggle {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
 
 img {
   width: 100%;
@@ -162,7 +201,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .iconGitHub {
-  color: white;
+  color: var(--text-color);
   transition: ease-out 0.32s;
 }
 
@@ -172,7 +211,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .iconLinkedIn {
-  color: white;
+  color: var(--text-color);
   transition: ease-out 0.32s;
 }
 
@@ -180,6 +219,14 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: var(--linkedin-color);
   scale: 1.2;
 }
+
+/** Experience **/
+.experienceCard {
+  background-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
+}
+
+
 
 /** projects **/
 .mainHeader h1 {
@@ -234,6 +281,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 /** skills **/
 .skillCard {
   background-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
   opacity: 0.88;
   transition: scale 0.32s ease-in-out;
 }
@@ -241,10 +289,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .skillCard:hover {
   scale: 1.03;
   box-shadow: 2px 2px 20px rgba(215, 134, 134, 0.297);
-}
-
-.skillCard ul {
-  color: #ccc;
 }
 
 .skillCard .hoverIcon {
@@ -275,6 +319,17 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   overflow: hidden !important;
   background-color: var(--secondary-color);
   transition: all 0.4s ease 0s !important;
+}
+
+.tech-icon-bubble {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--tech-icon-bubble-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
 }
 
 

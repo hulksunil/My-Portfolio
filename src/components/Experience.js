@@ -20,7 +20,7 @@ const ExperienceEntry = ({ exp, index }) => {
       key={index}
     >
       <div className="timeline-dot" />
-      <Card className="bg-dark text-white shadow-lg rounded-3 mb-4 timeline-card">
+      <Card className="experienceCard shadow-lg rounded-3 mb-4 timeline-card">
         <Card.Body>
           <h4>{exp.company}</h4>
           <p>
