@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Anchor, Button, Col, Container, Form, Row } from "react-bootstrap";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FiPhoneCall } from "react-icons/fi";
 import { IoMail } from "react-icons/io5";
 import { TiLocationOutline } from "react-icons/ti";
 
