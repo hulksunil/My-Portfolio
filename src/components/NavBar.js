@@ -40,7 +40,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           onClick={() => setToggled((prev) => !prev)}
           aria-controls="basic-navbar-nav"
         >
-          <span className="navbar-toggler-icon navbar-dark"></span>
+          <span className={`navbar-toggler-icon ${currentTheme === "dark" ? "navbar-dark" : "navbar-light"}`}></span>
         </Navbar.Toggle>
 
         {/* The actual content of the navbar */}
