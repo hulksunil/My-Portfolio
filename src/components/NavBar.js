@@ -33,7 +33,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
   }, []);
 
   return (
-    <Navbar expand="md" className={scrolled || toggled ? "scrolled" : ""}>
+    <Navbar expand="lg" className={scrolled || toggled ? "scrolled" : ""}>
       <Container>
         {/* The 3 bars */}
         <Navbar.Toggle
