@@ -94,23 +94,29 @@ const Loader = ({ load }) => {
 }
 
 
-
 function App() {
-  const [load, upadateLoad] = useState(true);
+  const [load, updateLoad] = useState(true);
+  const [theme, setTheme] = useState("dark"); // default to dark
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      upadateLoad(false);
+      updateLoad(false);
     }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
+  // Add/remove theme class on body when it changes
+  useEffect(() => {
+    document.body.classList.remove("light-theme", "dark-theme");
+    document.body.classList.add(`${theme}-theme`);
+  }, [theme]);
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   return (
-
-
     <div className="App">
       <div style={{ display: "none" }}>
         Sunil Kublalsingh
@@ -124,20 +130,18 @@ function App() {
       <Loader load={load} />
 
       <>
-        <NavBar />
+        <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
         <Intro />
         <Experience />
-        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
+        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} theme={theme} />
         <Skills />
         {/* <Techstack /> */}
-        <Contact />
+        <Contact theme={theme} />
         <Footer />
       </>
-
     </div>
-
-
   );
 }
+
 
 export default App;

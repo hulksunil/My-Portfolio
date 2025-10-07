@@ -48,7 +48,7 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
   return (
     <Card
       ref={skillRef}
-      className={`skillCard flash-in-section text-light h-100 ${hasBeenVisible ? "is-visible" : ""
+      className={`skillCard flash-in-section  h-100 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
       <Card.Body>
@@ -63,18 +63,7 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
               className="d-flex flex-column align-items-center text-center"
               style={{ width: "90px" }}
             >
-              <div
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.1)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "1.8rem",
-                }}
-              >
+              <div className="tech-icon-bubble">
                 {icon}
               </div>
               <small className="mt-2">{name}</small>
@@ -141,7 +130,7 @@ const Skills = () => {
 
   return (
     <Container className="py-5 mainHeader" id="skills">
-      <h1 className="text-center text-light mb-4">Skills</h1>
+      <h1 className="text-center mb-4">Skills</h1>
       <Row>
         {Object.entries(skills).map(([category, skillList]) => (
           <Col key={category} md={6} lg={4} className="mb-4">

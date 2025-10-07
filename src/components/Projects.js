@@ -1,7 +1,7 @@
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Card, Button } from "react-bootstrap";
 
-function ProjectCard({ title, description, tags, link, img }) {
+function ProjectCard({ title, description, tags, link, img, theme }) {
   return (
     <Card className="projectCard">
       <Card.Body>
@@ -15,7 +15,7 @@ function ProjectCard({ title, description, tags, link, img }) {
             </Badge>
           ))}
         </div>
-        <Button variant="outline-light" href={link} target="_blank">
+        <Button variant={theme === "dark" ? "outline-light" : "outline-dark"} href={link} target="_blank">
           View Project
         </Button>
       </Card.Body>
@@ -35,7 +35,7 @@ function ProjectCard({ title, description, tags, link, img }) {
  * Make a simon game quick in react or something and then add it (shouldn't be too hard)
  *
  */
-const Projects = ({ projects }) => {
+const Projects = ({ projects, theme }) => {
   return (
     <Container fluid id="projects" className="projects mainHeader">
       <h1>Projects</h1>
@@ -47,7 +47,7 @@ const Projects = ({ projects }) => {
       <Row className="justify-content-around">
         {projects.map((project) => (
           <Col sm={12} md={6} lg={4} key={project.title}>
-            <ProjectCard {...project} />
+            <ProjectCard {...project} theme={theme} />
           </Col>
         ))}
       </Row>
