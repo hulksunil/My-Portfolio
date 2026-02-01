@@ -61,7 +61,14 @@ const TypingThing = ({ toRotate, active }) => {
 const Intro = () => {
   const { ref: introRef, inView: introIsVisible } = useInView();
 
-  const toRotate = ["Full Stack Developer", "Tech Enthusiast", "Computer Engineer", "Innovator"];
+  const toRotate = [
+    "Full Stack Developer",
+    "Coffee Addict",
+    "Problem Solver",
+    "Tech Enthusiast",
+    "Comp Eng Student",
+    "Innovator",
+  ];
   return (
     <Container id="home" className="container-fluid" style={{ margin: "0" }}>
       <Row className="align-items-center">
