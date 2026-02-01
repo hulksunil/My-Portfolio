@@ -51,9 +51,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
-            <Nav.Link href={CV} target="_blank" className="navbar-link">
-              Resume
-            </Nav.Link>
+
             <CustomNavLink
               href="experience"
               activeLink={activeLink}
@@ -74,6 +72,10 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             />
+
+            <Nav.Link href={CV} target="_blank" className="navbar-link">
+              Resume
+            </Nav.Link>
 
             {/* Theme toggle button */}
             <Nav.Link
