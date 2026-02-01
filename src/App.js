@@ -16,7 +16,6 @@ import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
 import airzen from "./assets/img/projects/airzen.gif";
 import pcRemote from "./assets/img/projects/pc-remote.gif";
-import Techstack from "./components/Techstack";
 
 const projects = [{
   title: "PC-Remote",
@@ -135,7 +134,6 @@ function App() {
         <Experience />
         <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} theme={theme} />
         <Skills />
-        {/* <Techstack /> */}
         <Contact theme={theme} />
         <Footer />
       </>
