@@ -186,20 +186,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-size: 70px;
 }
 
-/** The cursor **/
-@keyframes blink {
-  from {
-    border: none;
-  }
-
-  to {
-    border-right: 0.08em solid #666;
-  }
-}
-
 .typingText {
-  /* border-right: 0.08em solid #666; */
-  animation: blink 1s infinite;
+  display: inline-block;
 }
 
 .intro .bio {

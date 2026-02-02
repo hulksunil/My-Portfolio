@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Anchor, Button, Col, Container, Row } from "react-bootstrap";
-import { FcViewDetails } from "react-icons/fc";
-
 import CV from "../assets/Sunil_Kublalsingh.pdf";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
+import CodeWindow from "./CodeWindow";
+import BackgroundGradients from "./BackgroundGradients";
 
 const TypingThing = ({ toRotate, active }) => {
   const [loopNum, setLoopNum] = useState(0);
@@ -23,7 +22,7 @@ const TypingThing = ({ toRotate, active }) => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text, active]);
+  }, [text, active, delta]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -34,20 +33,16 @@ const TypingThing = ({ toRotate, active }) => {
 
     setText(newText);
 
-    // If deleting, we want to remove characters faster than adding them
     if (isDeleting) {
-      // if statement to prevent from deleting too quickly (which would be almost instant and not look good)
       if (delta > 100) {
         setDelta((prevDelta) => prevDelta / 2);
       }
     }
 
-    // If we are not deleting and newText is the same as fullText, then we want to start deleting (we also reset the speed to the slowest)
     if (!isDeleting && newText === fullText) {
       setIsDeleting(true);
       setDelta(period);
     }
-    // If we are deleting and newText is empty, then we want to start typing the next word (we also reset the speed to the slowest)
     else if (isDeleting && newText === "") {
       setIsDeleting(false);
       setDelta(100);
@@ -55,7 +50,7 @@ const TypingThing = ({ toRotate, active }) => {
       setText("\u00A0");
     }
   };
-  return <span className="typingText"> {text}</span>;
+  return <span className="typingText whitespace-nowrap"> {text}</span>;
 };
 
 const Intro = () => {
@@ -63,55 +58,99 @@ const Intro = () => {
 
   const toRotate = [
     "Full Stack Developer",
-    "Coffee Addict",
-    "Problem Solver",
-    "Tech Enthusiast",
-    "Comp Eng Student",
     "Innovator",
+    "Problem Solver",
   ];
+
   return (
-    <Container id="home" className="container-fluid" style={{ margin: "0" }}>
-      <Row className="align-items-center">
-        <Col xs={12} md={6} lg={7}>
-          <div className="intro">
-            <h1>
-              Hi! I'm <span id="myName">Sunil</span>
-            </h1>
-            <TypingThing toRotate={toRotate} active={introIsVisible} />
-            <p className="bio" ref={introRef}>
+    <section id="home" className="min-h-screen pt-32 pb-32 px-6 sm:px-12 lg:px-24 flex flex-col justify-center relative overflow-hidden">
+      <BackgroundGradients />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+
+          {/* Left Column: Content */}
+          <div className="lg:col-span-7 flex flex-col gap-8" ref={introRef}>
+            {/* Active Status Badge */}
+            <div className="flex items-center gap-2 bg-white/5 border border-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new opportunities</span>
+            </div>
+
+            <div className="space-y-6">
+              <h1 className="text-7xl md:text-8xl lg:text-[110px] font-display font-bold text-white tracking-tighter leading-[0.85] py-2">
+                Hi! I'm <br />
+                <span className="bg-gradient-to-r from-[#0ea5e9] via-teal-400 to-[#0ea5e9] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(14,165,233,0.35)]">
+                  Sunil
+                </span>
+              </h1>
+
+              <div className="text-2xl md:text-4xl font-medium text-slate-400 font-display flex items-center gap-4 min-h-[50px]">
+                <span className="text-white font-mono opacity-80">&gt;</span>
+                <TypingThing toRotate={toRotate} active={introIsVisible} />
+              </div>
+            </div>
+
+            <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl font-light">
               Driven by curiosity and a desire to innovate, with the goal of
               contributing to cutting-edge technologies that shape the future.
             </p>
-            <div className="socials">
-              <Anchor
-                className="text-reset text-decoration-none"
+
+            <div className="flex flex-wrap items-center gap-8 mt-4">
+              <a
                 href={CV}
                 target="_blank"
+                rel="noreferrer"
+                className="bg-[#0ea5e9] hover:bg-[#38bdf8] text-white px-10 py-4 rounded-2xl text-[16px] font-bold transition-all no-underline shadow-[0_10px_40px_rgba(14,165,233,0.4)] hover:-translate-y-1 active:translate-y-0 text-center"
               >
-                {/* <FcViewDetails size={20} /> */}
-                <Button variant="dark" style={{ fontSize: "20px" }}>
-                  Resume
-                </Button>
-              </Anchor>
-              <Anchor
-                className="text-reset"
-                href="https://github.com/hulksunil"
-                target="_blank"
-              >
-                <FaGithub className="iconGitHub" size={"30px"} />
-              </Anchor>
-              <Anchor
-                className="text-reset"
-                href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
-                target="_blank"
-              >
-                <FaLinkedin className="iconLinkedIn" size={"30px"} />
-              </Anchor>
+                Download Resume
+              </a>
+
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://github.com/hulksunil"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={26} className="group-hover:text-[#0ea5e9] transition-colors" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin size={26} className="group-hover:text-[#0ea5e9] transition-colors" />
+                </a>
+              </div>
             </div>
           </div>
-        </Col>
-      </Row>
-    </Container>
+
+          {/* Right Column: Code Window */}
+          <div className="lg:col-span-5 hidden lg:block perspective-1000">
+            <div className="animate-float">
+              <div className="transform rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
+                <CodeWindow />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Down Indicator - Pushed down to avoid overlap */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+        <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
+        <div className="w-5 h-8 rounded-full border-2 border-slate-700 flex justify-center p-1">
+          <div className="w-1 h-1.5 bg-[#0ea5e9] rounded-full animate-bounce"></div>
+        </div>
+      </div>
+    </section>
   );
 };
 
