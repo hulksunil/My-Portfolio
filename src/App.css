@@ -132,6 +132,7 @@ button {
 
 
 /************ Navbar Css ************/
+/* 
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -166,6 +167,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
   scale: 1.05;
 }
+*/
 
 /* .toggled {
   background-color: #121212;
