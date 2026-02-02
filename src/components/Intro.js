@@ -50,7 +50,7 @@ const TypingThing = memo(({ toRotate, active }) => {
       setText("\u00A0");
     }
   };
-  return <span className="typingText whitespace-nowrap"> {text}</span>;
+  return <span className="typingText"> {text}</span>;
 });
 
 const Intro = () => {
@@ -58,8 +58,11 @@ const Intro = () => {
 
   const toRotate = [
     "Full Stack Developer",
-    "Innovator",
+    "Coffee Addict",
     "Problem Solver",
+    "Tech Enthusiast",
+    "Comp Eng Student",
+    "Innovator",
   ];
 
   return (
@@ -81,11 +84,8 @@ const Intro = () => {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-7xl md:text-8xl lg:text-[110px] font-display font-bold text-slate-900 dark:text-white tracking-tighter leading-[0.85] py-2">
-                Hi! I'm <br />
-                <span className="bg-gradient-to-r from-[#0ea5e9] via-teal-400 to-[#0ea5e9] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(14,165,233,0.35)]">
-                  Sunil
-                </span>
+              <h1 class="text-6xl md:text-8xl font-display font-extrabold leading-[1.1] mb-6">
+                Hi! I'm <span class="gradient-text">Sunil</span>
               </h1>
 
               <div className="text-2xl md:text-4xl font-medium text-slate-500 dark:text-slate-400 font-display flex items-center gap-4 min-h-[50px]">

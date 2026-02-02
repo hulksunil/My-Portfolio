@@ -130,7 +130,6 @@ button {
 }
 
 
-
 /************ Navbar Css ************/
 /* 
 nav.navbar {
@@ -174,6 +173,12 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 } */
 
 /** intro **/
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .intro {
   /* background-color: #121212; */
   color: var(--text-color);
