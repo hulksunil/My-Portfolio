@@ -119,6 +119,32 @@ function App() {
     }
   }, [theme]);
 
+  // Pause animations during scroll for better performance
+  useEffect(() => {
+    let scrollTimer;
+
+    const handleScroll = () => {
+      // Add class to pause animations
+      document.body.classList.add('is-scrolling');
+
+      // Clear existing timer
+      clearTimeout(scrollTimer);
+
+      // Remove class after scrolling stops (150ms debounce)
+      scrollTimer = setTimeout(() => {
+        document.body.classList.remove('is-scrolling');
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
+
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };

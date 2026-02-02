@@ -5,8 +5,8 @@
 @layer components {
   .glass {
     background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.4);
   }
 
@@ -70,6 +70,14 @@
     transform: translateY(-15px);
   }
 }
+
+/* Pause expensive animations during scroll for better performance */
+body.is-scrolling .animate-pulse-slow,
+body.is-scrolling .animate-drift,
+body.is-scrolling .animate-float {
+  animation-play-state: paused !important;
+}
+
 
 body {
   margin: 0;
