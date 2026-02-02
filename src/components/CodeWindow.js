@@ -82,7 +82,7 @@ const CodeWindow = () => {
                 </div>
             </div>
 
-            <div className="absolute -bottom-10 -left-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 animate-float hidden xl:flex scale-90 xl:scale-100 origin-top-right will-change-transform" style={{ animationDelay: '1s' }}>
+            <div className="absolute -bottom-10 -left-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 hidden xl:flex scale-90 xl:scale-100 origin-top-right will-change-transform" style={{ animationDelay: '1s' }}>
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#0ea5e9]/10 dark:bg-[#0ea5e9]/20 flex items-center justify-center text-[#0ea5e9]">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />

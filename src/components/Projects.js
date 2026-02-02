@@ -38,7 +38,7 @@ function ProjectCard({ title, description, tags, link, img, theme }) {
 const Projects = ({ projects, theme }) => {
   return (
     <div id="projects" className="projects odd-section ">
-      <div class="text-center mb-20">
+      <div className="text-center mb-20">
         <h2 className="text-4xl font-display font-bold mb-4 pt-4">Projects</h2>
         <p className="text-slate-500 max-w-2xl mx-auto text-lg">
           I love working on projects! Here are some of the projects that I have

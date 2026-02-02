@@ -130,9 +130,9 @@ const Skills = () => {
 
   return (
     <div className="py-5 px-5" id="skills">
-      <div class="text-center mb-20">
+      <div className="text-center mb-20">
         <h2 className="text-4xl font-display font-bold mb-4 pt-4">Skills</h2>
-        <p class="text-slate-500 max-w-2xl mx-auto text-lg">Tools and technologies I've mastered over the years.</p>
+        <p className="text-slate-500 max-w-2xl mx-auto text-lg">Tools and technologies I've mastered over the years.</p>
       </div>
 
       <Row>

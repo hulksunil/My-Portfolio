@@ -77,15 +77,15 @@ const Intro = () => {
             {/* Active Status Badge */}
             <div className="flex items-center gap-2 bg-[#0ea5e9]/5 dark:bg-white/5 border border-[#0ea5e9]/20 dark:border-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-[#0ea5e9] dark:text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new opportunities</span>
             </div>
 
             <div className="space-y-6">
-              <h1 class="text-6xl md:text-8xl font-display font-extrabold leading-[1.1] mb-6">
-                Hi! I'm <span class="gradient-text">Sunil</span>
+              <h1 className="text-6xl md:text-8xl font-display font-extrabold leading-[1.1] mb-6">
+                Hi! I'm <span className="gradient-text">Sunil</span>
               </h1>
 
               <div className="text-2xl md:text-4xl font-medium text-slate-500 dark:text-slate-400 font-display flex items-center gap-4 min-h-[50px]">

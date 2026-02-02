@@ -112,9 +112,9 @@ const Experience = () => {
 
   return (
     <div id="experience" className="px-5 py-2 experience">
-      <div class="text-center mb-20">
+      <div className="text-center mb-20">
         <h2 className="text-4xl font-display font-bold mb-4 pt-4">Work Experience</h2>
-        <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+        <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
       </div>
 
       {experiences.map((exp, index) => (
