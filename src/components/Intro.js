@@ -75,7 +75,7 @@ const Intro = () => {
           {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col gap-8" ref={introRef}>
             {/* Active Status Badge */}
-            <div className="flex items-center gap-2 bg-[#0ea5e9]/5 dark:bg-white/5 border border-[#0ea5e9]/20 dark:border-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
+            <div className="hidden md:flex lg:flex items-center gap-2 bg-[#0ea5e9]/5 dark:bg-white/5 border border-[#0ea5e9]/20 dark:border-white/10 w-fit px-2 py-1 rounded-full backdrop-blur-md">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -144,7 +144,7 @@ const Intro = () => {
       </div>
 
       {/* Scroll Down Indicator - Pushed down to avoid overlap */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+      <div className="hidden md:flex lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
         <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
         <div className="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center p-1">
           <div className="w-1 h-1.5 bg-[#0ea5e9] rounded-full animate-bounce"></div>
