@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import CV from "../assets/Sunil_Kublalsingh.pdf";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import CodeWindow from "./CodeWindow";
 import BackgroundGradients from "./BackgroundGradients";
 
-const TypingThing = ({ toRotate, active }) => {
+const TypingThing = memo(({ toRotate, active }) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("\u00A0");
@@ -51,7 +51,7 @@ const TypingThing = ({ toRotate, active }) => {
     }
   };
   return <span className="typingText whitespace-nowrap"> {text}</span>;
-};
+});
 
 const Intro = () => {
   const { ref: introRef, inView: introIsVisible } = useInView();
@@ -72,29 +72,29 @@ const Intro = () => {
           {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col gap-8" ref={introRef}>
             {/* Active Status Badge */}
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
+            <div className="flex items-center gap-2 bg-[#0ea5e9]/5 dark:bg-white/5 border border-[#0ea5e9]/20 dark:border-white/10 w-fit px-4 py-2 rounded-full backdrop-blur-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              <span className="text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new opportunities</span>
+              <span className="text-[#0ea5e9] dark:text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new opportunities</span>
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-7xl md:text-8xl lg:text-[110px] font-display font-bold text-white tracking-tighter leading-[0.85] py-2">
+              <h1 className="text-7xl md:text-8xl lg:text-[110px] font-display font-bold text-slate-900 dark:text-white tracking-tighter leading-[0.85] py-2">
                 Hi! I'm <br />
                 <span className="bg-gradient-to-r from-[#0ea5e9] via-teal-400 to-[#0ea5e9] bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(14,165,233,0.35)]">
                   Sunil
                 </span>
               </h1>
 
-              <div className="text-2xl md:text-4xl font-medium text-slate-400 font-display flex items-center gap-4 min-h-[50px]">
-                <span className="text-white font-mono opacity-80">&gt;</span>
+              <div className="text-2xl md:text-4xl font-medium text-slate-500 dark:text-slate-400 font-display flex items-center gap-4 min-h-[50px]">
+                <span className="text-slate-900 dark:text-white font-mono opacity-80">&gt;</span>
                 <TypingThing toRotate={toRotate} active={introIsVisible} />
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-xl font-light">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl font-light">
               Driven by curiosity and a desire to innovate, with the goal of
               contributing to cutting-edge technologies that shape the future.
             </p>
@@ -114,19 +114,19 @@ const Intro = () => {
                   href="https://github.com/hulksunil"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  className="p-3.5 glass hover:bg-[#0ea5e9] dark:hover:bg-[#0ea5e9]/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="GitHub"
                 >
-                  <FaGithub size={26} className="group-hover:text-[#0ea5e9] transition-colors" />
+                  <FaGithub size={26} className="transition-colors" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  className="p-3.5 glass hover:bg-[#0ea5e9] dark:hover:bg-[#0ea5e9]/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedin size={26} className="group-hover:text-[#0ea5e9] transition-colors" />
+                  <FaLinkedin size={26} className="transition-colors" />
                 </a>
               </div>
             </div>
@@ -146,7 +146,7 @@ const Intro = () => {
       {/* Scroll Down Indicator - Pushed down to avoid overlap */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
         <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
-        <div className="w-5 h-8 rounded-full border-2 border-slate-700 flex justify-center p-1">
+        <div className="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center p-1">
           <div className="w-1 h-1.5 bg-[#0ea5e9] rounded-full animate-bounce"></div>
         </div>
       </div>
@@ -154,4 +154,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default memo(Intro);

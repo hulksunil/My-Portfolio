@@ -105,10 +105,18 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Add/remove theme class on body when it changes
+  // Add/remove theme class on body and html when it changes
   useEffect(() => {
+    // Legacy support for body classes
     document.body.classList.remove("light-theme", "dark-theme");
     document.body.classList.add(`${theme}-theme`);
+
+    // Official Tailwind Dark Mode support on root
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, [theme]);
 
   const toggleTheme = () => {
