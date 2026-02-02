@@ -22,43 +22,43 @@ const CodeWindow = () => {
                 <div className="p-8 font-mono text-[13px] md:text-[15px] leading-relaxed">
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-500 w-4">1</span>
-                        <p>
+                        <p className="mb-2 md:mb-4 lg:mb-8">
                             <span className="text-purple-600 dark:text-purple-400 font-bold">const</span> <span className="text-[#0ea5e9]">developer</span> <span className="">=</span> <span className="">{'{'}</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">2</span>
-                        <p className="pl-6">
+                        <p className="pl-6 mb-2 md:mb-4 lg:mb-8">
                             <span className="text-slate-500 dark:text-slate-400">name:</span> <span className="text-teal-600 dark:text-teal-400">'Sunil'</span><span className="text-slate-400 dark:text-slate-300">,</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">3</span>
-                        <p className="pl-6">
+                        <p className="pl-6 mb-2 md:mb-4 lg:mb-8">
                             <span className="text-slate-500 dark:text-slate-400">role:</span> <span className="text-teal-600 dark:text-teal-400">'Software Engineer'</span><span className="text-slate-400 dark:text-slate-300">,</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">4</span>
-                        <p className="pl-6">
+                        <p className="pl-6 mb-2 md:mb-4 lg:mb-8">
                             <span className="text-slate-500 dark:text-slate-400">passion:</span> <span className="text-teal-600 dark:text-teal-400">'Building Scalable Systems'</span><span className="text-slate-400 dark:text-slate-300">,</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">5</span>
-                        <p className="pl-6">
+                        <p className="pl-6 mb-2 md:mb-4 lg:mb-8">
                             <span className="text-slate-500 dark:text-slate-400">location:</span> <span className="text-teal-600 dark:text-teal-400">'Montréal, QC'</span><span className="text-slate-400 dark:text-slate-300">,</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">6</span>
-                        <p className="pl-6">
+                        <p className="pl-6 mb-2 md:mb-4 lg:mb-8">
                             <span className="text-slate-500 dark:text-slate-400">status:</span> <span className="text-purple-600 dark:text-purple-400">true</span>
                         </p>
                     </div>
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-500 w-4">7</span>
-                        <p>
+                        <p className="mb-2 md:mb-4 lg:mb-8">
                             <span className="">{'}'}</span><span className="">;</span>
                         </p>
                     </div>
