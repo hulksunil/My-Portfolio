@@ -15,7 +15,7 @@
 /* Dark Theme Background */
 .dark-theme {
   --primary-color: #121212;
-  --secondary-color: #000;
+  --secondary-color: rgb(2 6 23 / var(--tw-bg-opacity, 1));
   --text-color: #fff;
   --secondary-text-color: #ababab;
   --accent_color: #1a262c;
@@ -23,7 +23,7 @@
   --lets-talk-gradient-start: #70a5bd;
   --lets-talk-gradient-end: #b7bbbd;
 
-  background-image: url("./assets/img/background-5.jpg");
+  /* background-image: url("./assets/img/background-5.jpg"); */
   background-color: var(--secondary-color) !important;
   background-position: top center;
   background-size: cover;
@@ -45,8 +45,8 @@
   --lets-talk-gradient-start: #27779c;
   --lets-talk-gradient-end: #7c8e96;
 
-  background-color: #bdd6fb;
-  background-image: url("./assets/img/background-light-2.jpg");
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+  /* background-image: url("./assets/img/background-light-2.jpg"); */
 }
 
 ::-webkit-scrollbar {
