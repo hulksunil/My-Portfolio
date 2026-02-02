@@ -66,10 +66,11 @@ const Intro = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen pt-32 pb-32 px-6 sm:px-12 lg:px-24 flex flex-col justify-center relative overflow-hidden">
+    <section id="home" className="px-6 sm:px-12 lg:px-24 relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
       <BackgroundGradients />
 
-      <div className="max-w-7xl mx-auto w-full relative z-10">
+
+      <div className="max-w-7xl mx-auto px-6 pt-20 relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
 
           {/* Left Column: Content */}

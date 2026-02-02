@@ -111,13 +111,13 @@ const Experience = () => {
   ];
 
   return (
-    <Container id="experience" className="experience mainHeader">
+    <div id="experience" className="px-5 py-2 odd-section experience mainHeader">
       <h1>Work Experience</h1>
 
       {experiences.map((exp, index) => (
         <ExperienceEntry exp={exp} index={index} />
       ))}
-    </Container>
+    </div>
   );
 };
 

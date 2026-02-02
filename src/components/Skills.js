@@ -129,7 +129,7 @@ const Skills = () => {
   };
 
   return (
-    <Container className="py-5 mainHeader" id="skills">
+    <div className="odd-section py-5 mainHeader" id="skills">
       <h1 className="text-center mb-4">Skills</h1>
       <Row>
         {Object.entries(skills).map(([category, skillList]) => (
@@ -142,7 +142,7 @@ const Skills = () => {
           </Col>
         ))}
       </Row>
-    </Container>
+    </div>
   );
 };
 
