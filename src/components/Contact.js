@@ -40,8 +40,8 @@ const Contact = ({ theme }) => {
   };
 
   return (
-    <Container fluid id="contact" className="contact mainHeader">
-      <h1>Contact</h1>
+    <div id="contact" className="contact odd-section">
+
       <Row>
         {/* Contact Info */}
 
@@ -116,7 +116,7 @@ const Contact = ({ theme }) => {
           </Form>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 };
 

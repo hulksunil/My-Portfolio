@@ -244,18 +244,10 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 
 /** projects **/
-.mainHeader h1 {
-  font-size: 3.5em;
-  text-align: center;
-  padding-top: 3em;
-}
+
 
 .projects {
   text-align: center;
-}
-
-.projects p {
-  font-size: larger;
 }
 
 .projectCard {
