@@ -1,6 +1,8 @@
 import { useState, useEffect, memo } from "react";
 import CV from "../assets/Sunil_Kublalsingh.pdf";
-import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars } from "react-icons/fa";
+
+const navLinks = ["home", "experience", "projects", "skills", "contact"];
 
 const CustomNavLink = ({ href, activeLink, setActiveLink, onClick }) => {
   return (
@@ -33,6 +35,20 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Keep active state in sync when URL hash changes (back/forward, direct hash edits)
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (hash && navLinks.includes(hash)) {
+        setActiveLink(hash);
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, []);
+
   // Intersection Observer to detect which section is in view
   useEffect(() => {
     const observerOptions = {
@@ -45,7 +61,12 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const sectionId = entry.target.id;
-          setActiveLink(sectionId);
+          setActiveLink((prev) => {
+            if (prev !== sectionId) {
+              window.history.replaceState(null, "", `#${sectionId}`);
+            }
+            return sectionId;
+          });
         }
       });
     };
@@ -64,8 +85,6 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
       });
     };
   }, []);
-
-  const navLinks = ["home", "experience", "projects", "skills", "contact"];
 
   return (
     <nav
