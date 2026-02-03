@@ -33,16 +33,19 @@ const TypingThing = memo(({ toRotate, active }) => {
 
     setText(newText);
 
+    // If deleting, we want to remove characters faster than adding them
     if (isDeleting) {
+      // if statement to prevent from deleting too quickly (which would be almost instant and not look good)
       if (delta > 100) {
         setDelta((prevDelta) => prevDelta / 2);
       }
     }
-
+    // If we are not deleting and newText is the same as fullText, then we want to start deleting (we also reset the speed to the slowest)
     if (!isDeleting && newText === fullText) {
       setIsDeleting(true);
       setDelta(period);
     }
+    // If we are deleting and newText is empty, then we want to start typing the next word (we also reset the speed to the slowest)
     else if (isDeleting && newText === "") {
       setIsDeleting(false);
       setDelta(100);
@@ -77,7 +80,9 @@ const Intro = () => {
             {/* Active Status Badge */}
             <div className="hidden md:flex lg:flex items-center gap-2 bg-[#0ea5e9]/5 dark:bg-white/5 border border-[#0ea5e9]/20 dark:border-white/10 w-fit px-2 py-1 rounded-full backdrop-blur-md">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                {/* Outer ring - pinging */}
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary"></span>
+                {/* Inner ring - solid circle */}
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               <span className="text-[#0ea5e9] dark:text-[#38bdf8] text-[10px] font-bold uppercase tracking-[0.2em]">Available for new opportunities</span>

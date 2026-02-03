@@ -204,8 +204,23 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   font-size: 70px;
 }
 
+/** The cursor **/
+@keyframes blink {
+
+  0%,
+  100% {
+    border-right: 0.1em solid transparent;
+  }
+
+  50% {
+    border-right: 0.1em solid #666;
+  }
+}
+
 .typingText {
-  display: inline-block;
+  /* display: inline-block; */
+  padding-right: 0.05em;
+  animation: blink 1s infinite;
 }
 
 .intro .bio {
