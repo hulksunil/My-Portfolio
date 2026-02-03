@@ -24,7 +24,7 @@ const CodeWindow = () => {
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-500 w-4">1</span>
                         <p className="lg:mb-2 xl:mb-6 ">
-                            <span className="text-purple-600 dark:text-purple-400 font-bold">const</span> <span className="text-[#0ea5e9]">developer</span> <span className="">=</span> <span className="">{'{'}</span>
+                            <span className="text-purple-600 dark:text-purple-400 font-bold">const</span> <span className="text-[#0ea5e9]">developer</span> <span className="text-purple-600 dark:text-purple-400">=</span> <span className="text-purple-600 dark:text-purple-400 font-bold">{'{'}</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
@@ -60,7 +60,7 @@ const CodeWindow = () => {
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-500 w-4">7</span>
                         <p className="lg:mb-2 xl:mb-6 ">
-                            <span className="">{'}'}</span><span className="">;</span>
+                            <span className="text-purple-600 dark:text-purple-400 font-bold">{'}'}</span><span className="">;</span>
                         </p>
                     </div>
                     <div className="mt-8 italic text-slate-400 dark:text-slate-500">
