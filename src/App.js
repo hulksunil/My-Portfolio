@@ -167,7 +167,7 @@ function App() {
         <Experience />
         <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} theme={theme} />
         <Skills />
-        <Contact theme={theme} />
+        <Contact />
         <Footer />
       </>
     </div>
