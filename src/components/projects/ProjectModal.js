@@ -76,7 +76,7 @@ const ProjectModal = ({
                 <button
                   type="button"
                   onClick={onPrevious}
-                  className="inline-flex items-center justify-center px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:border-primary hover:text-primary"
+                  className="inline-flex items-center justify-center px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary"
                 >
                   <FiChevronLeft className="mr-1 text-base" />
                   Previous
@@ -84,7 +84,7 @@ const ProjectModal = ({
                 <button
                   type="button"
                   onClick={onNext}
-                  className="inline-flex items-center justify-center px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:border-primary hover:text-primary"
+                  className="inline-flex items-center justify-center px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs tracking-[0.12em] uppercase transition-all duration-300 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary"
                 >
                   Next
                   <FiChevronRight className="ml-1 text-base" />

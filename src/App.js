@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Intro from "./components/hero/Intro";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
+import Projects from "./components/projects/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -165,7 +165,7 @@ function App() {
         <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
         <Intro />
         <Experience />
-        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} theme={theme} />
+        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
         <Skills />
         <Contact />
         <Footer />
