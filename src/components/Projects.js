@@ -1,5 +1,6 @@
 import { Badge, Col, Container, Row } from "react-bootstrap";
 import { Card, Button } from "react-bootstrap";
+import HeadingTitle from "./utils/HeadingTitle";
 
 function ProjectCard({ title, description, tags, link, img, theme }) {
   return (
@@ -37,14 +38,8 @@ function ProjectCard({ title, description, tags, link, img, theme }) {
  */
 const Projects = ({ projects, theme }) => {
   return (
-    <div id="projects" className="projects odd-section ">
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-display font-bold mb-4 pt-4">Projects</h2>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-          I love working on projects! Here are some of the projects that I have
-          worked on:
-        </p>
-      </div>
+    <div id="projects" className="projects odd-section px-5 py-24">
+      <HeadingTitle title="Projects" description="I love working on projects! Here are some of the projects that I have worked on:" />
 
       <Row className="justify-content-around">
         {projects.map((project) => (

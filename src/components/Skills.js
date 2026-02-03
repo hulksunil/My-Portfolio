@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import HeadingTitle from "./utils/HeadingTitle";
 import {
   FaCode,
   FaDatabase,
@@ -129,11 +130,8 @@ const Skills = () => {
   };
 
   return (
-    <div className="py-5 px-5" id="skills">
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-display font-bold mb-4 pt-4">Skills</h2>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg">Tools and technologies I've mastered over the years.</p>
-      </div>
+    <div className="px-5 py-24" id="skills">
+      <HeadingTitle title="Skills" description="Tools and technologies I've mastered over the years." />
 
       <Row>
         {Object.entries(skills).map(([category, skillList]) => (

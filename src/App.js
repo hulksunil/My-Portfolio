@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Intro from "./components/Intro";
+import Intro from "./components/hero/Intro";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";

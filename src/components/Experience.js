@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Container, Card } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
+import HeadingTitle from "./utils/HeadingTitle";
 
 const ExperienceEntry = ({ exp, index }) => {
   const { ref: experienceRef, inView: experienceIsVisible } = useInView();
@@ -111,11 +112,8 @@ const Experience = () => {
   ];
 
   return (
-    <div id="experience" className="px-5 py-2 experience">
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-display font-bold mb-4 pt-4">Work Experience</h2>
-        <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-      </div>
+    <div id="experience" className="px-5 py-24 experience">
+      <HeadingTitle title="Work Experience" />
 
       {experiences.map((exp, index) => (
         <ExperienceEntry exp={exp} index={index} />

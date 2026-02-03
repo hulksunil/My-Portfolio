@@ -40,7 +40,7 @@ const Contact = ({ theme }) => {
   };
 
   return (
-    <div id="contact" className="contact odd-section">
+    <div id="contact" className="contact odd-section px-5 py-24">
 
       <Row>
         {/* Contact Info */}

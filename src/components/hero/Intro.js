@@ -1,5 +1,5 @@
 import { useEffect, useState, memo } from "react";
-import CV from "../assets/Sunil_Kublalsingh.pdf";
+import CV from "../../assets/Sunil_Kublalsingh.pdf";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 import CodeWindow from "./CodeWindow";
