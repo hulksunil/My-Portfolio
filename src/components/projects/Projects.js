@@ -35,9 +35,9 @@ const Projects = ({ projects }) => {
 
       <HeadingTitle title="Projects" description="I love working on projects! Here are some of the projects that I have worked on:" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1280px] mx-auto justify-items-center">
         {projects.map((project, index) => (
-          <div key={project.title} className="flex">
+          <div key={project.title} className="w-full flex justify-center">
             <ProjectCard {...project} onSelect={() => openModal(index)} />
           </div>
         ))}
