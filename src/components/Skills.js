@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
 import HeadingTitle from "./utils/HeadingTitle";
 import {
   FaCode,
@@ -47,32 +46,32 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
   }, [skillIsVisible]);
 
   return (
-    <Card
+    <div
       ref={skillRef}
-      className={`skillCard flash-in-section  h-100 ${hasBeenVisible ? "is-visible" : ""
+      className={`group flash-in-section w-full h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
-      <Card.Body>
-        <Card.Title className="d-flex align-items-center mb-3">
+      <div className="h-full">
+        <h3 className="flex items-center mb-4 text-xl font-semibold">
           {skillIcons[category]}
-          <span className="ms-2">{category}</span>
-        </Card.Title>
-        <div className="d-flex flex-wrap gap-3">
+          <span className="ml-2">{category}</span>
+        </h3>
+        <div className="flex flex-wrap gap-3">
           {skillList.map(({ name, icon }) => (
             <div
               key={name}
-              className="d-flex flex-column align-items-center text-center"
+              className="flex flex-col items-center text-center"
               style={{ width: "90px" }}
             >
               <div className="tech-icon-bubble">
                 {icon}
               </div>
-              <small className="mt-2">{name}</small>
+              <small className="mt-2 text-slate-700 dark:text-slate-200">{name}</small>
             </div>
           ))}
         </div>
-      </Card.Body>
-    </Card>
+      </div>
+    </div>
   );
 };
 
@@ -121,29 +120,29 @@ const Skills = () => {
   };
 
   const skillIcons = {
-    "Programming Languages": <FaCode className="hoverIcon" />,
-    "Frameworks & Libraries": <FaGlobe className="hoverIcon" />,
-    Databases: <FaDatabase className="hoverIcon" />,
-    "Tools & Platforms": <FaTools className="hoverIcon" />,
-    "Additional Knowledge": <FaCogs className="hoverIcon" />,
-    Languages: <FaLanguage className="hoverIcon" />,
+    "Programming Languages": <FaCode className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
+    "Frameworks & Libraries": <FaGlobe className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
+    Databases: <FaDatabase className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
+    "Tools & Platforms": <FaTools className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
+    "Additional Knowledge": <FaCogs className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
+    Languages: <FaLanguage className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
   };
 
   return (
     <div className="px-5 py-24" id="skills">
       <HeadingTitle title="Skills" description="Tools and technologies I've mastered over the years." />
 
-      <Row>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Object.entries(skills).map(([category, skillList]) => (
-          <Col key={category} md={6} lg={4} className="mb-4">
+          <div key={category} className="flex">
             <SkillCard
               skillIcons={skillIcons}
               category={category}
               skillList={skillList}
             />
-          </Col>
+          </div>
         ))}
-      </Row>
+      </div>
     </div>
   );
 };
