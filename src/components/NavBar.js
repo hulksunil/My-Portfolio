@@ -33,6 +33,38 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Intersection Observer to detect which section is in view
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -60% 0px", // Trigger when section is 20% from top
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          setActiveLink(sectionId);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    const sections = navLinks.map((link) => document.getElementById(link));
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []);
+
   const navLinks = ["home", "experience", "projects", "skills", "contact"];
 
   return (
@@ -51,7 +83,9 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
           {/* Logo */}
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(14,165,233,0.2)] dark:shadow-[0_0_15px_rgba(14,165,233,0.4)]">
-              <img src="/favicon/favicon.svg" alt="Logo" className="w-full h-full object-cover" />
+              <a href="#home" onClick={() => setActiveLink("home")}>
+                <img src="/favicon/favicon.svg" alt="Logo" className="w-full h-full object-cover" />
+              </a>
             </div>
             <span className="font-display font-bold text-lg tracking-tight hidden sm:block text-slate-900 dark:text-white">
               SUNIL
