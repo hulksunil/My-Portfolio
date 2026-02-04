@@ -48,7 +48,7 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
   return (
     <div
       ref={skillRef}
-      className={`group flash-in-section w-full h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
+      className={`group flash-in-section w-full max-w-[380px] h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
       <div className="h-full">
@@ -132,9 +132,9 @@ const Skills = () => {
     <div className="px-5 py-24" id="skills">
       <HeadingTitle title="Skills" description="Tools and technologies I've mastered over the years." />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1280px] mx-auto justify-items-center">
         {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="flex">
+          <div key={category} className="w-full flex justify-center">
             <SkillCard
               skillIcons={skillIcons}
               category={category}
