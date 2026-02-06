@@ -32,7 +32,7 @@ const Projects = ({ projects }) => {
     selectedProjectIndex !== null ? projects[selectedProjectIndex] : null;
 
   return (
-    <section id="projects" className="projects odd-section px-5 py-24 relative overflow-hidden">
+    <section id="projects" className="projects px-5 py-24 relative overflow-hidden">
       <div className="absolute top-10 -left-10 w-56 h-56 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-12 -right-8 w-56 h-56 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -47,14 +47,14 @@ const Projects = ({ projects }) => {
       </div>
 
       {remainingProjects.length > 0 && (
-        <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-900/30 p-6 md:p-8">
+        <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-900/30 p-6 md:p-24 w-fit mx-auto">
           <div className="mb-6">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400">
-              More Projects
+              Additional Projects
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 w-fit mx-auto">
             {remainingProjects.map((project, index) => (
               <div key={project.title} className="flex justify-center">
                 <ProjectCard

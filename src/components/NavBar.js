@@ -2,7 +2,7 @@ import { useState, useEffect, memo } from "react";
 import CV from "../assets/Sunil_Kublalsingh.pdf";
 import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 
-const navLinks = ["home", "experience", "projects", "skills", "contact"];
+const navLinks = ["home", "projects", "experience", "skills", "contact"];
 
 const CustomNavLink = ({ href, activeLink, setActiveLink, onClick }) => {
   return (

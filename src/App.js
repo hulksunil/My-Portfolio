@@ -23,6 +23,7 @@ const projects = [{
   tags: ["Flutter", "Go", "TCP", "UDP", "Sockets", "Windows", "macOS", "Solo Project"],
   link: "https://github.com/hulksunil/PC-Remote",
   dateDeveloped: new Date("2025-08-01"),
+  priority: 1,
   img: pcRemote,
 },
 {
@@ -32,6 +33,7 @@ const projects = [{
   tags: ["ESP32", "Android Studio", "Hardware Project", "Java", "C++", "Firebase Realtime Database", "Team Leader of 6"],
   link: "https://github.com/hulksunil/AirZen",
   dateDeveloped: new Date("2024-09-01"),
+  priority: 1,
   img: airzen,
 },
 {
@@ -41,6 +43,7 @@ const projects = [{
   tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Solo Project"],
   link: "https://gitlab.com/hulksunil/bouncing-ball",
   dateDeveloped: new Date("2020-01-01"),
+  priority: 5,
   img: bouncingBall,
 },
 {
@@ -50,6 +53,7 @@ const projects = [{
   tags: ["MongoDB", "Express", "ReactJS", "Node.js", "Team Leader of 5"],
   link: "https://github.com/hulksunil/Error_404-soen341projectW2024",
   dateDeveloped: new Date("2024-01-01"),
+  priority: 2,
   img: carsRUs,
 },
 {
@@ -59,6 +63,7 @@ const projects = [{
   tags: ["Arduino", "C++", "Hardware Project", "Team Leader of 4"],
   link: "", // No link yet (private repo) https://github.com/AGBellerive/ENGR290
   dateDeveloped: new Date("2023-09-01"),
+  priority: 2,
   img: hovercraftProject,
 },
 {
@@ -68,6 +73,7 @@ const projects = [{
   tags: ["JavaFX", "MySQL", "Jodd", "Solo Project"],
   link: "https://gitlab.com/headbandSunil/java-application-for-gmail/-/tree/master?ref_type=heads",
   dateDeveloped: new Date("2021-01-01"),
+  priority: 5,
   img: emailClient,
 },
 {
@@ -77,6 +83,7 @@ const projects = [{
   tags: ["ReactJS", "Bootstrap", "Solo Project"],
   link: "https://github.com/hulksunil/My-Portfolio",
   dateDeveloped: new Date("2024-08-01"),
+  priority: 5,
   img: portfolio,
 },
 ];
@@ -164,8 +171,8 @@ function App() {
       <>
         <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
         <Intro />
+        <Projects projects={projects.sort((a, b) => (a.priority - b.priority) || (b.dateDeveloped - a.dateDeveloped))} />
         <Experience />
-        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} />
         <Skills />
         <Contact />
         <Footer />
