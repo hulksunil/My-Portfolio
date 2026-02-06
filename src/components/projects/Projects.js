@@ -25,6 +25,9 @@ const Projects = ({ projects }) => {
     showPreviousProject,
   } = useProjectModal(projects.length);
 
+  const top3Projects = projects.slice(0, 3);
+  const remainingProjects = projects.slice(3);
+
   const selectedProject =
     selectedProjectIndex !== null ? projects[selectedProjectIndex] : null;
 
@@ -36,12 +39,35 @@ const Projects = ({ projects }) => {
       <HeadingTitle title="Projects" description="I love working on projects! Here are some of the projects that I have worked on:" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-        {projects.map((project, index) => (
+        {top3Projects.map((project, index) => (
           <div key={project.title} className="flex">
             <ProjectCard {...project} onSelect={() => openModal(index)} />
           </div>
         ))}
       </div>
+
+      {remainingProjects.length > 0 && (
+        <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-900/30 p-6 md:p-8">
+          <div className="mb-6">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400">
+              More Projects
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 max-w-6xl mx-auto">
+            {remainingProjects.map((project, index) => (
+              <div key={project.title} className="flex justify-center">
+                <ProjectCard
+                  {...project}
+                  onSelect={() => openModal(index + 3)}
+                  isFeatured={false}
+                  isCompact
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <ProjectModal
         project={selectedProject}
