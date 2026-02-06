@@ -59,6 +59,13 @@ const TypingThing = memo(({ toRotate, active }) => {
 
 const Intro = () => {
   const { ref: introRef, inView: introIsVisible } = useInView();
+  // Scroll to projects section
+  const handleScrollDown = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   const toRotate = [
     "Full Stack Developer",
@@ -142,12 +149,17 @@ const Intro = () => {
       </div>
 
       {/* Scroll Down Indicator - Pushed down to avoid overlap */}
-      <div className="hidden md:flex lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+      <button
+        type="button"
+        onClick={handleScrollDown}
+        aria-label="Scroll down to projects"
+        className="hidden md:flex lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity bg-transparent border-0 p-0"
+      >
         <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
         <div className="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center p-1">
           <div className="w-1 h-1.5 bg-[#0ea5e9] rounded-full animate-bounce"></div>
         </div>
-      </div>
+      </button>
     </section>
   );
 };
