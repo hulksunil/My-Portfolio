@@ -24,7 +24,7 @@ const ProjectCard = ({
           onSelect();
         }
       }}
-      className={`group relative h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
+      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
         } ${isCompact ? "max-w-sm" : ""
         }`}
     >
