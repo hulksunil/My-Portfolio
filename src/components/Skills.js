@@ -38,6 +38,39 @@ import { useInView } from "react-intersection-observer";
 const SkillCard = ({ skillIcons, category, skillList }) => {
   const { ref: skillRef, inView: skillIsVisible } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const categoryStyles = {
+    "Programming Languages": {
+      accent: "bg-gradient-to-r from-sky-500/60 to-cyan-500/50",
+      pattern:
+        "bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:18px_18px]",
+    },
+    "Frameworks & Libraries": {
+      accent: "bg-gradient-to-r from-emerald-500/50 to-teal-500/45",
+      pattern:
+        "bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.26)_1px,transparent_0)] bg-[size:14px_14px]",
+    },
+    Databases: {
+      accent: "bg-gradient-to-r from-indigo-500/50 to-blue-500/45",
+      pattern:
+        "bg-[repeating-linear-gradient(0deg,transparent,transparent_10px,rgba(148,163,184,0.16)_10px,rgba(148,163,184,0.16)_11px)]",
+    },
+    "Tools & Platforms": {
+      accent: "bg-gradient-to-r from-amber-500/50 to-orange-500/45",
+      pattern:
+        "bg-[linear-gradient(135deg,rgba(148,163,184,0.14)_25%,transparent_25%,transparent_50%,rgba(148,163,184,0.14)_50%,rgba(148,163,184,0.14)_75%,transparent_75%,transparent)] bg-[size:18px_18px]",
+    },
+    "Additional Knowledge": {
+      accent: "bg-gradient-to-r from-violet-500/50 to-fuchsia-500/45",
+      pattern:
+        "bg-[repeating-linear-gradient(90deg,transparent,transparent_12px,rgba(148,163,184,0.16)_12px,rgba(148,163,184,0.16)_13px)]",
+    },
+    Languages: {
+      accent: "bg-gradient-to-r from-rose-500/50 to-pink-500/45",
+      pattern:
+        "bg-[radial-gradient(ellipse_at_top,rgba(148,163,184,0.15),transparent_55%)]",
+    },
+  };
+  const activeStyle = categoryStyles[category];
 
   useEffect(() => {
     if (skillIsVisible) {
@@ -48,10 +81,13 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
   return (
     <div
       ref={skillRef}
-      className={`group flash-in-section w-full h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
+      className={`group flash-in-section relative overflow-hidden w-full max-w-[380px] h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
-      <div className="h-full">
+      <div className={`absolute inset-0 opacity-40 dark:opacity-20 ${activeStyle.pattern}`} />
+      <div className={`absolute left-0 top-0 h-1 w-full ${activeStyle.accent}`} />
+
+      <div className="relative z-10 h-full">
         <h3 className="flex items-center mb-4 text-xl font-semibold">
           {skillIcons[category]}
           <span className="ml-2">{category}</span>
@@ -60,13 +96,10 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
           {skillList.map(({ name, icon }) => (
             <div
               key={name}
-              className="flex flex-col items-center text-center"
-              style={{ width: "90px" }}
+              className="flex w-[90px] flex-col items-center text-center rounded-xl border border-slate-200/80 bg-white/65 px-2 py-3 text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 dark:border-slate-700/70 dark:bg-slate-900/35 dark:text-slate-200 dark:hover:border-slate-600"
             >
-              <div className="tech-icon-bubble">
-                {icon}
-              </div>
-              <small className="mt-2 text-slate-700 dark:text-slate-200">{name}</small>
+              <div className="text-2xl">{icon}</div>
+              <small className="mt-2 text-[11px] font-semibold leading-tight">{name}</small>
             </div>
           ))}
         </div>
@@ -132,9 +165,9 @@ const Skills = () => {
     <div className="px-5 py-24" id="skills">
       <HeadingTitle title="Skills" description="Tools and technologies I've mastered over the years." />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1280px] mx-auto justify-items-center">
         {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="flex">
+          <div key={category} className="w-full flex justify-center">
             <SkillCard
               skillIcons={skillIcons}
               category={category}

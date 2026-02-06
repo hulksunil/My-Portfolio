@@ -22,9 +22,8 @@ const ProjectCard = ({
           onSelect();
         }
       }}
-      className={`group relative h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 cursor-pointer ${
-        isCompact ? "max-w-sm" : ""
-      }`}
+      className={`group relative h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 cursor-pointer ${isCompact ? "max-w-sm" : ""
+        }`}
     >
       <div className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}>
         <div className="absolute inset-0 z-20 border border-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
@@ -47,9 +46,8 @@ const ProjectCard = ({
             </div>
           )}
           <h3
-            className={`font-bold tracking-tight group-hover:text-primary transition-colors ${
-              isCompact ? "text-xl" : "text-2xl"
-            }`}
+            className={`font-bold tracking-tight group-hover:text-primary transition-colors ${isCompact ? "text-xl" : "text-2xl"
+              }`}
           >
             {title}
           </h3>
@@ -75,9 +73,8 @@ const ProjectCard = ({
             target="_blank"
             rel="noreferrer"
             onClick={(event) => event.stopPropagation()}
-            className={`w-full inline-flex items-center justify-center rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.22)] ${
-              isCompact ? "px-4 py-2.5" : "px-6 py-3"
-            }`}
+            className={`w-full inline-flex items-center justify-center rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.22)] ${isCompact ? "px-4 py-2.5" : "px-6 py-3"
+              }`}
           >
             View Project
             <FiArrowRight className="ml-2 text-sm transition-transform duration-300 group-hover:translate-x-1" />
