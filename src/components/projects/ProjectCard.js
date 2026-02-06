@@ -13,16 +13,19 @@ const ProjectCard = ({
 }) => {
   return (
     <article
-      role="button"
-      tabIndex={0}
+      role={onSelect ? "button" : undefined}
+      tabIndex={onSelect ? 0 : undefined}
       onClick={onSelect}
       onKeyDown={(event) => {
+        if (!onSelect) return;
+
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
           onSelect();
         }
       }}
-      className={`group relative h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 hover:-translate-y-2 hover:border-primary/50 cursor-pointer ${isCompact ? "max-w-sm" : ""
+      className={`group relative h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
+        } ${isCompact ? "max-w-sm" : ""
         }`}
     >
       <div className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}>

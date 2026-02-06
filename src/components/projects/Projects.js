@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import HeadingTitle from "../utils/HeadingTitle";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
@@ -16,6 +17,7 @@ import useProjectModal from "./useProjectModal";
  *
  */
 const Projects = ({ projects }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const {
     selectedProjectIndex,
     isModalVisible,
@@ -24,6 +26,18 @@ const Projects = ({ projects }) => {
     showNextProject,
     showPreviousProject,
   } = useProjectModal(projects.length);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const handleMediaChange = () => setIsMobile(mediaQuery.matches);
+
+    handleMediaChange();
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
 
   const top3Projects = projects.slice(0, 3);
   const remainingProjects = projects.slice(3);
@@ -41,7 +55,10 @@ const Projects = ({ projects }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {top3Projects.map((project, index) => (
           <div key={project.title} className="flex">
-            <ProjectCard {...project} onSelect={() => openModal(index)} />
+            <ProjectCard
+              {...project}
+              onSelect={!isMobile ? () => openModal(index) : undefined}
+            />
           </div>
         ))}
       </div>
@@ -59,7 +76,7 @@ const Projects = ({ projects }) => {
               <div key={project.title} className="flex justify-center">
                 <ProjectCard
                   {...project}
-                  onSelect={() => openModal(index + 3)}
+                  onSelect={!isMobile ? () => openModal(index + 3) : undefined}
                   isFeatured={false}
                   isCompact
                 />
