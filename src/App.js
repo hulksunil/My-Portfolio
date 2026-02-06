@@ -7,6 +7,7 @@ import Projects from "./components/projects/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AboutMe from "./components/unused/AboutMe";
 
 import bouncingBall from "./assets/img/projects/bouncing-ball.gif";
 import carsRUs from "./assets/img/projects/cars-r-us.gif";
@@ -174,6 +175,7 @@ function App() {
         <Projects projects={projects.sort((a, b) => (a.priority - b.priority) || (b.dateDeveloped - a.dateDeveloped))} />
         <Experience />
         <Skills />
+        <AboutMe />
         <Contact />
         <Footer />
       </>
