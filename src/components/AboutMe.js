@@ -1,9 +1,9 @@
-import HeadingTitle from "../utils/HeadingTitle";
-import me from "../../assets/img/me.jpg";
+import HeadingTitle from "./utils/HeadingTitle";
+import me from "../assets/img/me.jpg";
 
 const AboutMe = () => {
     return (
-        <div className="flex flex-col items-center justify-center">
+        <section id="about" className="flex flex-col items-center justify-center">
             <HeadingTitle title="About Me" />
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full max-w-5xl p-8 bg-slate-50 dark:bg-slate-900 rounded-[20px] mb-16">
@@ -19,7 +19,7 @@ const AboutMe = () => {
                     Outside of class and internships, you’ll usually find me building side projects, competing in hackathons, or experimenting with new tools and ideas.
                 </p>
             </div>
-        </div>
+        </section>
     );
 }
 
