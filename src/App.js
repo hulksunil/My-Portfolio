@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Intro from "./components/Intro";
+import Intro from "./components/hero/Intro";
 import Experience from "./components/Experience";
-import Projects from "./components/Projects";
+import Projects from "./components/projects/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AboutMe from "./components/AboutMe";
 
 import bouncingBall from "./assets/img/projects/bouncing-ball.gif";
 import carsRUs from "./assets/img/projects/cars-r-us.gif";
@@ -24,6 +24,7 @@ const projects = [{
   tags: ["Flutter", "Go", "TCP", "UDP", "Sockets", "Windows", "macOS", "Solo Project"],
   link: "https://github.com/hulksunil/PC-Remote",
   dateDeveloped: new Date("2025-08-01"),
+  priority: 1,
   img: pcRemote,
 },
 {
@@ -33,6 +34,7 @@ const projects = [{
   tags: ["ESP32", "Android Studio", "Hardware Project", "Java", "C++", "Firebase Realtime Database", "Team Leader of 6"],
   link: "https://github.com/hulksunil/AirZen",
   dateDeveloped: new Date("2024-09-01"),
+  priority: 1,
   img: airzen,
 },
 {
@@ -42,6 +44,7 @@ const projects = [{
   tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Solo Project"],
   link: "https://gitlab.com/hulksunil/bouncing-ball",
   dateDeveloped: new Date("2020-01-01"),
+  priority: 5,
   img: bouncingBall,
 },
 {
@@ -51,6 +54,7 @@ const projects = [{
   tags: ["MongoDB", "Express", "ReactJS", "Node.js", "Team Leader of 5"],
   link: "https://github.com/hulksunil/Error_404-soen341projectW2024",
   dateDeveloped: new Date("2024-01-01"),
+  priority: 2,
   img: carsRUs,
 },
 {
@@ -60,6 +64,7 @@ const projects = [{
   tags: ["Arduino", "C++", "Hardware Project", "Team Leader of 4"],
   link: "", // No link yet (private repo) https://github.com/AGBellerive/ENGR290
   dateDeveloped: new Date("2023-09-01"),
+  priority: 2,
   img: hovercraftProject,
 },
 {
@@ -69,6 +74,7 @@ const projects = [{
   tags: ["JavaFX", "MySQL", "Jodd", "Solo Project"],
   link: "https://gitlab.com/headbandSunil/java-application-for-gmail/-/tree/master?ref_type=heads",
   dateDeveloped: new Date("2021-01-01"),
+  priority: 5,
   img: emailClient,
 },
 {
@@ -78,6 +84,7 @@ const projects = [{
   tags: ["ReactJS", "Bootstrap", "Solo Project"],
   link: "https://github.com/hulksunil/My-Portfolio",
   dateDeveloped: new Date("2024-08-01"),
+  priority: 5,
   img: portfolio,
 },
 ];
@@ -105,11 +112,45 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Add/remove theme class on body when it changes
+  // Add/remove theme class on body and html when it changes
   useEffect(() => {
+    // Legacy support for body classes
     document.body.classList.remove("light-theme", "dark-theme");
     document.body.classList.add(`${theme}-theme`);
+
+    // Official Tailwind Dark Mode support on root
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }, [theme]);
+
+  // Pause animations during scroll for better performance
+  useEffect(() => {
+    let scrollTimer;
+
+    const handleScroll = () => {
+      // Add class to pause animations
+      document.body.classList.add('is-scrolling');
+
+      // Clear existing timer
+      clearTimeout(scrollTimer);
+
+      // Remove class after scrolling stops (150ms debounce)
+      scrollTimer = setTimeout(() => {
+        document.body.classList.remove('is-scrolling');
+      }, 150);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
+
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
@@ -131,10 +172,11 @@ function App() {
       <>
         <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
         <Intro />
+        <Projects projects={projects.sort((a, b) => (a.priority - b.priority) || (b.dateDeveloped - a.dateDeveloped))} />
         <Experience />
-        <Projects projects={projects.sort((a, b) => b.dateDeveloped - a.dateDeveloped)} theme={theme} />
         <Skills />
-        <Contact theme={theme} />
+        <AboutMe />
+        <Contact />
         <Footer />
       </>
     </div>
