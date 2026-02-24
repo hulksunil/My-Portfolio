@@ -109,7 +109,7 @@ const Intro = () => {
                 href={CV}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#0ea5e9] hover:bg-[#38bdf8] text-white px-10 py-4 rounded-2xl text-[16px] font-bold transition-all no-underline shadow-[0_10px_40px_rgba(14,165,233,0.4)] hover:-translate-y-1 active:translate-y-0 text-center"
+                className="bg-primary hover:bg-primary-hover text-white px-10 py-4 rounded-2xl text-[16px] font-bold transition-all no-underline shadow-[0_10px_40px_rgb(var(--color-primary-rgb)/0.4)] hover:-translate-y-1 active:translate-y-0 text-center"
               >
                 Download Resume
               </a>
@@ -119,7 +119,7 @@ const Intro = () => {
                   href="https://github.com/hulksunil"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 glass hover:bg-[#0ea5e9] dark:hover:bg-[#0ea5e9]/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  className="p-3.5 glass hover:bg-primary dark:hover:bg-primary/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="GitHub"
                 >
                   <FaGithub size={26} className="transition-colors" />
@@ -128,7 +128,7 @@ const Intro = () => {
                   href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
                   target="_blank"
                   rel="noreferrer"
-                  className="p-3.5 glass hover:bg-[#0ea5e9] dark:hover:bg-[#0ea5e9]/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
+                  className="p-3.5 glass hover:bg-primary dark:hover:bg-primary/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin size={26} className="transition-colors" />
@@ -157,7 +157,7 @@ const Intro = () => {
       >
         <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
         <div className="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center p-1">
-          <div className="w-1 h-1.5 bg-[#0ea5e9] rounded-full animate-bounce"></div>
+          <div className="w-1 h-1.5 bg-primary rounded-full animate-bounce"></div>
         </div>
       </button>
     </section>

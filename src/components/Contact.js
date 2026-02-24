@@ -41,7 +41,7 @@ const Contact = () => {
           {/* Left Column - Contact Info */}
           <div>
             <h2 className="text-5xl font-extrabold mb-8 tracking-tight">
-              Let's <span className="text-[#0ea5e9] underline decoration-4 underline-offset-8">Talk.</span>
+              Let's <span className="text-primary underline decoration-4 underline-offset-8">Talk.</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-md">
               Currently open to new opportunities and interesting collaborations. Feel free to reach out via email or any social platform.
@@ -50,7 +50,7 @@ const Contact = () => {
             <div className="space-y-8">
               {/* Email */}
               <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#0ea5e9]">
+                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
                   <IoMail size={24} />
                 </div>
                 <div>
@@ -61,7 +61,7 @@ const Contact = () => {
 
               {/* Location */}
               <div className="flex items-center gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[#0ea5e9]">
+                <div className="w-14 h-14 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-primary">
                   <TiLocationOutline size={24} />
                 </div>
                 <div>
@@ -95,7 +95,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-sm font-bold">Your Name</label>
                   <input
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all outline-none"
+                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                     placeholder="John Doe"
                     type="text"
                     name="name"
@@ -107,7 +107,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-sm font-bold">Email Address</label>
                   <input
-                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all outline-none"
+                    className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                     placeholder="john@example.com"
                     type="email"
                     name="email"
@@ -120,7 +120,7 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-sm font-bold">Your Message</label>
                 <textarea
-                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent transition-all outline-none resize-none"
+                  className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
                   placeholder="Tell me about your project..."
                   rows="5"
                   name="message"
@@ -131,14 +131,14 @@ const Contact = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-4 bg-[#0ea5e9] text-white font-bold rounded-xl shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/40 hover:-translate-y-0.5 active:scale-95 transition-all"
+                className="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5 active:scale-95 transition-all"
               >
                 Send Message
               </button>
 
               {/* Result Message */}
               {result && (
-                <p className="text-center text-sm font-medium text-[#0ea5e9] mt-4">
+                <p className="text-center text-sm font-medium text-primary mt-4">
                   {result}
                 </p>
               )}

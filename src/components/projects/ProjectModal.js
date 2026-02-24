@@ -93,7 +93,7 @@ const ProjectModal = ({
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.22)]"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgb(var(--color-primary-rgb)/0.22)]"
                 >
                   View Project
                   <FiArrowRight className="ml-2 text-sm" />

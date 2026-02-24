@@ -5,7 +5,7 @@ const CodeWindow = () => {
     return (
         <div className="relative group perspective-1000 will-change-transform">
             {/* Main Code Window */}
-            <div className="glass rounded-3xl overflow-hidden border border-white/40 dark:border-white/5 shadow-2xl transition-all duration-700 bg-white/70 dark:bg-[#020617]/40 backdrop-blur-2xl group-hover:shadow-[0_0_50px_rgba(14,165,233,0.1)] dark:group-hover:shadow-[0_0_50px_rgba(14,165,233,0.15)] will-change-transform">
+            <div className="glass rounded-3xl overflow-hidden border border-white/40 dark:border-white/5 shadow-2xl transition-all duration-700 bg-white/70 dark:bg-background-dark/40 backdrop-blur-2xl group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.1)] dark:group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.15)] will-change-transform">
                 {/* Title Bar */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-black/[0.03] dark:border-white/[0.03] bg-white/50 dark:bg-white/5">
                     <div className="flex gap-2">
@@ -24,7 +24,7 @@ const CodeWindow = () => {
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
                         <span className="text-slate-400 dark:text-slate-500 w-4">1</span>
                         <p className="lg:mb-2 xl:mb-6 ">
-                            <span className="text-purple-600 dark:text-purple-400 font-bold">const</span> <span className="text-[#0ea5e9]">developer</span> <span className="text-purple-600 dark:text-purple-400">=</span> <span className="text-purple-600 dark:text-purple-400 font-bold">{'{'}</span>
+                            <span className="text-purple-600 dark:text-purple-400 font-bold">const</span> <span className="text-primary">developer</span> <span className="text-purple-600 dark:text-purple-400">=</span> <span className="text-purple-600 dark:text-purple-400 font-bold">{'{'}</span>
                         </p>
                     </div>
                     <div className="flex gap-4">
@@ -84,7 +84,7 @@ const CodeWindow = () => {
             </div>
 
             <div className="absolute -bottom-10 -left-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 hidden xl:flex scale-90 xl:scale-100 origin-top-right will-change-transform" style={{ animationDelay: '1s' }}>
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-[#0ea5e9]/10 dark:bg-[#0ea5e9]/20 flex items-center justify-center text-[#0ea5e9]">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>

@@ -101,7 +101,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
         <div className="flex items-center justify-between px-6 py-3">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_0_15px_rgba(14,165,233,0.2)] dark:shadow-[0_0_15px_rgba(14,165,233,0.4)]">
+            <div className="w-9 h-9 rounded-xl overflow-hidden shadow-[0_0_15px_rgb(var(--color-primary-rgb)/0.2)] dark:shadow-[0_0_15px_rgb(var(--color-primary-rgb)/0.4)]">
               <a href="#home" onClick={() => setActiveLink("home")}>
                 <img src="/favicon/favicon.svg" alt="Logo" className="w-full h-full object-cover" />
               </a>
@@ -141,7 +141,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
               href={CV}
               target="_blank"
               rel="noreferrer"
-              className="bg-[#0ea5e9] hover:bg-[#38bdf8] text-white px-4 sm:px-7 py-2 sm:py-2.5 rounded-full text-[13px] sm:text-[14px] font-bold transition-all no-underline shadow-[0_5px_20px_rgba(14,165,233,0.2)] dark:shadow-[0_0_20px_rgba(14,165,233,0.3)]"
+              className="bg-primary hover:bg-primary-hover text-white px-4 sm:px-7 py-2 sm:py-2.5 rounded-full text-[13px] sm:text-[14px] font-bold transition-all no-underline shadow-[0_5px_20px_rgb(var(--color-primary-rgb)/0.2)] dark:shadow-[0_0_20px_rgb(var(--color-primary-rgb)/0.3)]"
             >
               Resume
             </a>

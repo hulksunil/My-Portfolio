@@ -36,27 +36,6 @@
     transform: translate3d(0, 0, 0);
   }
 
-  .animate-drift {
-    animation: drift 20s ease-in-out infinite;
-    will-change: transform;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes drift {
-
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  33% {
-    transform: translate3d(30px, -20px, 0);
-  }
-
-  66% {
-    transform: translate3d(-20px, 40px, 0);
-  }
 }
 
 @keyframes float {
@@ -73,7 +52,6 @@
 
 /* Pause expensive animations during scroll for better performance */
 body.is-scrolling .animate-pulse-slow,
-body.is-scrolling .animate-drift,
 body.is-scrolling .animate-float {
   animation-play-state: paused !important;
 }
@@ -81,7 +59,7 @@ body.is-scrolling .animate-float {
 
 body {
   margin: 0;
-  @apply bg-slate-50 text-slate-900 dark:bg-[#020617] dark:text-[#f8fafc];
+  @apply bg-background-light text-text dark:bg-background-dark dark:text-text;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

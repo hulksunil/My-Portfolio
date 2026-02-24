@@ -1,0 +1,60 @@
+:root,
+.light-theme {
+  /* Semantic tokens */
+  --color-primary-rgb: 14 165 233;
+  --color-primary-hover-rgb: 56 189 248;
+  --color-accent-rgb: 45 212 191;
+
+  --color-bg-rgb: 248 250 252;
+  --color-surface-rgb: 255 255 255;
+  --color-text-rgb: 18 18 18;
+  --color-text-muted-rgb: 85 85 85;
+
+  /* Explicit light/dark anchors for Tailwind utilities */
+  --color-bg-light-rgb: 248 250 252;
+  --color-bg-dark-rgb: 2 6 23;
+
+  /* Legacy aliases used across App.css */
+  --primary-color: rgb(var(--color-surface-rgb));
+  --secondary-color: rgb(var(--color-bg-rgb));
+  --text-color: rgb(var(--color-text-rgb));
+  --secondary-text-color: rgb(var(--color-text-muted-rgb));
+
+  --linkedin-color: #00a4fc;
+  --github-color: #59636e;
+
+  --accent_color: #e0e0e0;
+  --accent_color_dark: #ccc;
+  --tech-icon-bubble-color: rgba(0, 0, 0, 0.1);
+
+  --lets-talk-gradient-start: #27779c;
+  --lets-talk-gradient-end: #7c8e96;
+
+  --odd-color: rgb(248 250 252 / 1);
+
+  /* Shared gradients */
+  --intro-gradient-start: rgb(var(--color-primary-rgb));
+  --intro-gradient-end: rgb(var(--color-accent-rgb));
+}
+
+.dark,
+.dark-theme {
+  --color-bg-rgb: 2 6 23;
+  --color-surface-rgb: 18 18 18;
+  --color-text-rgb: 248 250 252;
+  --color-text-muted-rgb: 171 171 171;
+
+  --primary-color: rgb(var(--color-surface-rgb));
+  --secondary-color: rgb(var(--color-bg-rgb));
+  --text-color: rgb(var(--color-text-rgb));
+  --secondary-text-color: rgb(var(--color-text-muted-rgb));
+
+  --accent_color: #1a262c;
+  --accent_color_dark: #000e15;
+  --tech-icon-bubble-color: rgba(255, 255, 255, 0.1);
+
+  --lets-talk-gradient-start: #70a5bd;
+  --lets-talk-gradient-end: #b7bbbd;
+
+  --odd-color: rgb(15 23 42 / 0.5);
+}
