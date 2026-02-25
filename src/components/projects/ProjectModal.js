@@ -13,14 +13,14 @@ const ProjectModal = ({
 
   return (
     <div
-      className={`fixed inset-0 z-[1200] p-4 md:p-8 flex items-center justify-center transition-all duration-200 ${isVisible
+      className={`fixed inset-0 z-[1200] p-2 md:p-4 flex items-center justify-center transition-all duration-200 ${isVisible
         ? "bg-slate-950/80 backdrop-blur-sm opacity-100"
         : "bg-slate-950/0 backdrop-blur-none opacity-0"
         }`}
       onClick={onClose}
     >
       <div
-        className={`relative w-full max-w-6xl max-h-[92vh] overflow-auto rounded-[2rem] border border-primary/30 bg-slate-50 dark:bg-slate-900 shadow-2xl shadow-sky-500/20 transition-all duration-250 ${isVisible
+        className={`relative w-full max-w-[96vw] xl:max-w-[90rem] max-h-[96vh] overflow-auto rounded-[2rem] border border-primary/30 bg-slate-50 dark:bg-slate-900 shadow-2xl shadow-sky-500/20 transition-all duration-250 ${isVisible
           ? "opacity-100 scale-100 translate-y-0"
           : "opacity-0 scale-[0.97] translate-y-3"
           }`}
@@ -36,7 +36,7 @@ const ProjectModal = ({
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative min-h-[280px] lg:min-h-[520px] bg-slate-950">
+          <div className="relative min-h-[340px] lg:min-h-[620px] bg-slate-950">
             <img
               src={project.img}
               alt={project.title}

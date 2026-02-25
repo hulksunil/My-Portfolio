@@ -12,9 +12,11 @@ const AboutMe = () => {
                     <img src={me} alt="Me" className="w-full max-w-sm aspect-square object-cover rounded-full object-[0%_0%]" />
                 </div>
                 <p className="text-slate-900 dark:text-white w-1/2">
-                    I’m a Computer Engineering student at focused on backend development and systems programming. I enjoy building practical applications that connect mobile apps, backend services, and real world devices.                    <br />
+                    I’m a Computer Engineering student focused on backend development and systems programming. I enjoy building practical applications that connect mobile apps, backend services, and real world devices.
                     <br />
-                    I like turning everyday problems into simple, reliable solutions and shipping projects that people can actually use.                    <br />
+                    <br />
+                    I like turning everyday problems into simple, reliable solutions and shipping projects that people can actually use.
+                    <br />
                     <br />
                     Outside of class and internships, you’ll usually find me building side projects, competing in hackathons, or experimenting with new tools and ideas.
                 </p>
