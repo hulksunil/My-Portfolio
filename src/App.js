@@ -68,7 +68,7 @@ const projects = [{
   description:
     "Designed by a team of 4, this hovercraft was created using an Arduino, some powerful fans and a couple sensors for guidance and control. It was engineered to autonomously navigate through a maze without any external assistance. ",
   tags: ["Arduino", "C++", "Hardware Project", "Team Leader of 4"],
-  link: "", // No link yet (private repo) https://github.com/AGBellerive/ENGR290
+  link: "https://github.com/AGBellerive/ENGR290/tree/main/Hovercraft%20Project/hovercraft-project", // No link yet (private repo) https://github.com/AGBellerive/ENGR290
   dateDeveloped: new Date("2023-09-01"),
   priority: 2,
   img: hovercraftProject,
