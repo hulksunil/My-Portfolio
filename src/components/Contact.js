@@ -72,6 +72,7 @@ const Contact = () => {
 
               <div className="flex gap-4">
                 <a
+                  rel="noopener noreferrer"
                   href="https://github.com/hulksunil"
                   target="_blank"
                 >
@@ -93,8 +94,9 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Name Input */}
                 <div className="space-y-2">
-                  <label className="text-sm font-bold">Your Name</label>
+                  <label htmlFor="name" className="text-sm font-bold">Your Name</label>
                   <input
+                    id="name"
                     className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                     placeholder="John Doe"
                     type="text"
@@ -105,8 +107,9 @@ const Contact = () => {
 
                 {/* Email Input */}
                 <div className="space-y-2">
-                  <label className="text-sm font-bold">Email Address</label>
+                  <label htmlFor="email" className="text-sm font-bold">Email Address</label>
                   <input
+                    id="email"
                     className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                     placeholder="john@example.com"
                     type="email"
@@ -118,8 +121,9 @@ const Contact = () => {
 
               {/* Message Textarea */}
               <div className="space-y-2">
-                <label className="text-sm font-bold">Your Message</label>
+                <label htmlFor="message" className="text-sm font-bold">Your Message</label>
                 <textarea
+                  id="message"
                   className="w-full px-6 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-none"
                   placeholder="Tell me about your project..."
                   rows="5"
