@@ -13,6 +13,11 @@ const ProjectCard = ({
   onSelect,
   isFeatured = true,
   isCompact = false,
+  enableReveal = true,
+  usePosterPreview = true,
+  imageLoading = "lazy",
+  imageFetchPriority = "auto",
+  revealDelayMs = 0,
 }) => {
   const { ref, inView } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
@@ -20,18 +25,19 @@ const ProjectCard = ({
   const [isFocused, setIsFocused] = useState(false);
   const [hasActivatedPreview, setHasActivatedPreview] = useState(false);
 
-  const shouldPlayPreview = isHovered || isFocused || hasActivatedPreview;
-  const imageSrc = shouldPlayPreview ? img : poster || img;
+  const shouldPlayPreview =
+    usePosterPreview && (isHovered || isFocused || hasActivatedPreview);
+  const imageSrc = shouldPlayPreview ? img : usePosterPreview ? poster || img : img;
 
   useEffect(() => {
-    if (inView) {
+    if (enableReveal && inView) {
       setHasBeenVisible(true);
     }
-  }, [inView]);
+  }, [enableReveal, inView]);
 
   return (
     <article
-      ref={ref}
+      ref={enableReveal ? ref : undefined}
       role={onSelect ? "button" : undefined}
       tabIndex={onSelect ? 0 : undefined}
       onClick={onSelect}
@@ -49,21 +55,23 @@ const ProjectCard = ({
           setIsFocused(false);
         }
       }}
-      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-700 ${hasBeenVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
+      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-700 ${enableReveal ? (hasBeenVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8") : "opacity-100 translate-y-0"} ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
         } ${isCompact ? "max-w-sm" : ""
         }`}
+      style={enableReveal ? { transitionDelay: `${revealDelayMs}ms` } : undefined}
     >
       <div
         className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onTouchStart={() => setHasActivatedPreview(true)}
+        onMouseEnter={usePosterPreview ? () => setIsHovered(true) : undefined}
+        onMouseLeave={usePosterPreview ? () => setIsHovered(false) : undefined}
+        onTouchStart={usePosterPreview ? () => setHasActivatedPreview(true) : undefined}
       >
         <div className="absolute inset-0 z-20 border border-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
         <img
           src={imageSrc}
           alt={title}
-          loading="lazy"
+          loading={imageLoading}
+          fetchPriority={imageFetchPriority}
           decoding="async"
           className="h-full w-full object-contain transition-all duration-700 grayscale-[25%] group-hover:grayscale-0 group-hover:scale-[1.02]"
         />

@@ -59,6 +59,10 @@ const Projects = ({ projects }) => {
             <ProjectCard
               {...project}
               onSelect={!isMobile ? () => openModal(index) : undefined}
+              usePosterPreview={false}
+              imageLoading="eager"
+              imageFetchPriority="high"
+              revealDelayMs={index * 140}
             />
           </div>
         ))}
@@ -81,6 +85,7 @@ const Projects = ({ projects }) => {
                   onSelect={!isMobile ? () => openModal(index + 3) : undefined}
                   isFeatured={false}
                   isCompact
+                  enableReveal={false}
                 />
               </div>
             ))}

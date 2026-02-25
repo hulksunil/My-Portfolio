@@ -16,6 +16,7 @@ import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
 import airzen from "./assets/img/projects/airzen.gif";
 import pcRemote from "./assets/img/projects/pc-remote.gif";
+
 import bouncingBallPoster from "./assets/img/projects/posters/bouncing-ball.png";
 import carsRUsPoster from "./assets/img/projects/posters/cars-r-us.png";
 import hovercraftProjectPoster from "./assets/img/projects/posters/hovercraft-project-5.png";
@@ -181,7 +182,7 @@ function App() {
         Sunil Kublalsingh
       </div>
 
-      {/* <Loader load={load} /> */}
+      <Loader load={load} />
 
       <>
         <NavBar toggleTheme={toggleTheme} currentTheme={theme} />
