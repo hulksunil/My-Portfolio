@@ -153,7 +153,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 odd-section">
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-slate-900/50">
       <div className="max-w-4xl mx-auto px-6">
         <HeadingTitle title="Work Experience" />
 

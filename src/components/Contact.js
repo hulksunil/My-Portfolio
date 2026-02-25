@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 odd-section" id="contact">
+    <section className="py-24 bg-slate-100 dark:bg-slate-900/50" id="contact">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           {/* Left Column - Contact Info */}
