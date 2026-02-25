@@ -54,7 +54,7 @@ const CodeWindow = () => {
                     <div className="flex gap-4">
                         <span className="text-slate-400 dark:text-slate-500 w-4">6</span>
                         <p className="pl-6 lg:mb-2 xl:mb-6 ">
-                            <span className="text-slate-500 dark:text-slate-400">status:</span> <span className="text-purple-600 dark:text-purple-400">true</span>
+                            <span className="text-slate-500 dark:text-slate-400">isCodeBlooded:</span> <span className="text-purple-600 dark:text-purple-400">true</span>
                         </p>
                     </div>
                     <div className="flex gap-4 text-slate-600 dark:text-slate-300">
@@ -71,7 +71,7 @@ const CodeWindow = () => {
             </div>
 
             {/* Floating Badges */}
-            <div className="absolute -top-10 -right-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 animate-float hidden xl:flex scale-90 xl:scale-100 origin-bottom-left will-change-transform">
+            {/* <div className="absolute -top-10 -right-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 animate-float hidden xl:flex scale-90 xl:scale-100 origin-bottom-left will-change-transform">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-teal-500/10 dark:bg-teal-500/20 flex items-center justify-center text-teal-600 dark:text-teal-400">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -81,9 +81,9 @@ const CodeWindow = () => {
                     <p className="text-[8px] md:text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Performance</p>
                     <p className="text-xs md:text-sm font-bold text-slate-900 dark:text-white leading-none">Optimized</p>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="absolute -bottom-10 -left-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 hidden xl:flex scale-90 xl:scale-100 origin-top-right will-change-transform" style={{ animationDelay: '1s' }}>
+            {/* <div className="absolute -bottom-10 -left-12 glass bg-white/90 dark:!bg-slate-900/60 p-3 md:p-4 rounded-2xl border border-white dark:border-white/5 shadow-xl flex items-center gap-3 hidden xl:flex scale-90 xl:scale-100 origin-top-right will-change-transform" style={{ animationDelay: '1s' }}>
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center text-primary">
                     <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -93,7 +93,7 @@ const CodeWindow = () => {
                     <p className="text-[8px] md:text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest leading-none mb-1">Experience</p>
                     <p className="text-xs md:text-sm font-bold text-slate-900 dark:text-white leading-none">2+ Internships</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

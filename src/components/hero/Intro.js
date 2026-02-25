@@ -86,7 +86,7 @@ const Intro = () => {
           {/* Left Column: Content */}
           <div className="lg:col-span-7 flex flex-col gap-8" ref={introRef}>
             {/* Active Status Badge */}
-            <ActiveStatusBadge />
+            {/* <ActiveStatusBadge /> */}
 
             <div className="space-y-6">
               <h1 className="text-6xl md:text-8xl font-display font-extrabold leading-[1.1] mb-6">
@@ -140,7 +140,7 @@ const Intro = () => {
           {/* Right Column: Code Window */}
           <div className="lg:col-span-5 hidden lg:block perspective-1000">
             <div className="animate-float">
-              <div className="transform rotate-3 hover:rotate-0 transition-transform duration-700 shadow-2xl">
+              <div className="transform transition-transform duration-700 shadow-2xl">
                 <CodeWindow />
               </div>
             </div>
@@ -153,7 +153,7 @@ const Intro = () => {
         type="button"
         onClick={handleScrollDown}
         aria-label="Scroll down to projects"
-        className="hidden md:flex lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity bg-transparent border-0 p-0"
+        className="hidden md:flex lg:flex absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity bg-transparent border-0 p-0"
       >
         <span className="text-[9px] text-slate-500 uppercase tracking-[0.3em] font-bold">Scroll Down</span>
         <div className="w-5 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 flex justify-center p-1">
