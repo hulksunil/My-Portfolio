@@ -67,7 +67,7 @@ const Projects = ({ projects }) => {
 
       {/* Remaining projects */}
       {remainingProjects.length > 0 && (
-        <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-900/30 p-6 md:p-24 w-fit mx-auto">
+        <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-200/40 dark:bg-slate-900/30 p-6 md:p-24 w-fit mx-auto">
           <div className="mb-6">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400">
               Additional Projects
