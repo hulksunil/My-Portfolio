@@ -6,7 +6,7 @@ const AboutMe = () => {
         <section id="about" className="flex flex-col items-center justify-center">
             <HeadingTitle title="About Me" />
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full max-w-5xl p-8 bg-slate-50 dark:bg-slate-900 rounded-[20px] mb-16">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full max-w-5xl p-8 bg-slate-100 dark:bg-slate-900/30 rounded-[20px] mb-16">
                 <div className="w-1/2 flex justify-center">
                     {/* Edit the object-[0%_0%] to change the position of the image */}
                     <img src={me} alt="Me" className="w-full max-w-sm aspect-square object-cover rounded-full object-[0%_0%]" />
