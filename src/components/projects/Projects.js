@@ -47,8 +47,7 @@ const Projects = ({ projects }) => {
 
   return (
     <section id="projects" className="projects px-5 py-24 relative overflow-hidden">
-      <div className="absolute top-10 -left-10 w-56 h-56 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-12 -right-8 w-56 h-56 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-10 -left-10 w-52 h-52 bg-sky-500/5 rounded-full blur-2xl pointer-events-none" />
 
       <HeadingTitle title="Projects" description="I love working on projects! Here are some of the projects that I have worked on:" />
 

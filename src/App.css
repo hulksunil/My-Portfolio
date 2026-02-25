@@ -107,9 +107,8 @@ button {
 }
 
 /** projects **/
-
-
 .projects {
+  background-color: var(--secondary-color);
   text-align: center;
 }
 

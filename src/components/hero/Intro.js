@@ -160,6 +160,9 @@ const Intro = () => {
           <div className="w-1 h-1.5 bg-primary rounded-full animate-bounce"></div>
         </div>
       </button>
+
+      {/* Transiition for the gradient to look smooth at the bottom */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-b from-transparent to-background dark:to-background-dark" />
     </section>
   );
 };
