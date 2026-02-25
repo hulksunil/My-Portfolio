@@ -52,6 +52,7 @@ const Projects = ({ projects }) => {
 
       <HeadingTitle title="Projects" description="I love working on projects! Here are some of the projects that I have worked on:" />
 
+      {/* Top 3 projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {top3Projects.map((project, index) => (
           <div key={project.title} className="w-full">
@@ -63,6 +64,7 @@ const Projects = ({ projects }) => {
         ))}
       </div>
 
+      {/* Remaining projects */}
       {remainingProjects.length > 0 && (
         <div className="mt-16 rounded-3xl border border-slate-200/70 dark:border-slate-800 bg-slate-100/40 dark:bg-slate-900/30 p-6 md:p-24 w-fit mx-auto">
           <div className="mb-6">

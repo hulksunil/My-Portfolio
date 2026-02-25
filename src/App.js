@@ -16,6 +16,13 @@ import portfolio from "./assets/img/projects/portfolio.gif";
 import emailClient from "./assets/img/projects/emailClient.gif";
 import airzen from "./assets/img/projects/airzen.gif";
 import pcRemote from "./assets/img/projects/pc-remote.gif";
+import bouncingBallPoster from "./assets/img/projects/posters/bouncing-ball.png";
+import carsRUsPoster from "./assets/img/projects/posters/cars-r-us.png";
+import hovercraftProjectPoster from "./assets/img/projects/posters/hovercraft-project-5.png";
+import portfolioPoster from "./assets/img/projects/posters/portfolio.png";
+import emailClientPoster from "./assets/img/projects/posters/emailClient.png";
+import airzenPoster from "./assets/img/projects/posters/airzen.png";
+import pcRemotePoster from "./assets/img/projects/posters/pc-remote.png";
 
 const projects = [{
   title: "PC-Remote",
@@ -26,6 +33,7 @@ const projects = [{
   dateDeveloped: new Date("2025-08-01"),
   priority: 1,
   img: pcRemote,
+  poster: pcRemotePoster,
 },
 {
   title: "AirZen",
@@ -36,6 +44,7 @@ const projects = [{
   dateDeveloped: new Date("2024-09-01"),
   priority: 1,
   img: airzen,
+  poster: airzenPoster,
 },
 {
   title: "Bouncing Ball",
@@ -46,6 +55,7 @@ const projects = [{
   dateDeveloped: new Date("2020-01-01"),
   priority: 5,
   img: bouncingBall,
+  poster: bouncingBallPoster,
 },
 {
   title: "Car Rental Application",
@@ -56,6 +66,7 @@ const projects = [{
   dateDeveloped: new Date("2024-01-01"),
   priority: 2,
   img: carsRUs,
+  poster: carsRUsPoster,
 },
 {
   title: "Hovercraft Project",
@@ -66,6 +77,7 @@ const projects = [{
   dateDeveloped: new Date("2023-09-01"),
   priority: 2,
   img: hovercraftProject,
+  poster: hovercraftProjectPoster,
 },
 {
   title: "Email Client",
@@ -76,6 +88,7 @@ const projects = [{
   dateDeveloped: new Date("2021-01-01"),
   priority: 5,
   img: emailClient,
+  poster: emailClientPoster,
 },
 {
   title: "Portfolio Website",
@@ -86,6 +99,7 @@ const projects = [{
   dateDeveloped: new Date("2024-08-01"),
   priority: 5,
   img: portfolio,
+  poster: portfolioPoster,
 },
 ];
 
@@ -167,7 +181,7 @@ function App() {
         Sunil Kublalsingh
       </div>
 
-      <Loader load={load} />
+      {/* <Loader load={load} /> */}
 
       <>
         <NavBar toggleTheme={toggleTheme} currentTheme={theme} />

@@ -34,7 +34,7 @@ const ExperienceEntry = ({ exp, index, isLast }) => {
           <p className="text-slate-500 dark:text-slate-400 text-sm">{exp.location}</p>
         </div>
         {/* The little dot in the middle (left on mobile) of the timeline */}
-        <div className="absolute left-[-38px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark z-10 shadow-[0_0_15px_rgba(14,165,233,0.45)]"></div>
+        <div className="absolute left-[-38px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background-light dark:border-background-dark z-10 shadow-[0_0_15px_rgb(var(--color-primary-rgb)/0.45)]"></div>
 
         {/* Actual content */}
         <div className="md:w-5/12">

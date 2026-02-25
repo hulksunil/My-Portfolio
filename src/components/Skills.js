@@ -81,7 +81,7 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
   return (
     <div
       ref={skillRef}
-      className={`group flash-in-section relative overflow-hidden w-full max-w-[380px] h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgba(14,165,233,0.22)] dark:hover:shadow-[0_14px_34px_rgba(14,165,233,0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
+      className={`group fade-in-section relative overflow-hidden w-full max-w-[380px] h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgb(var(--color-primary-rgb)/0.22)] dark:hover:shadow-[0_14px_34px_rgb(var(--color-primary-rgb)/0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
       <div className={`absolute inset-0 opacity-40 dark:opacity-20 ${activeStyle.pattern}`} />

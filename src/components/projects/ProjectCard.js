@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { useInView } from "react-intersection-observer";
 import { getTagColorClass } from "./tagColors";
 
 const ProjectCard = ({
@@ -7,12 +9,29 @@ const ProjectCard = ({
   tags,
   link,
   img,
+  poster,
   onSelect,
   isFeatured = true,
   isCompact = false,
 }) => {
+  const { ref, inView } = useInView();
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
+  const [hasActivatedPreview, setHasActivatedPreview] = useState(false);
+
+  const shouldPlayPreview = isHovered || isFocused || hasActivatedPreview;
+  const imageSrc = shouldPlayPreview ? img : poster || img;
+
+  useEffect(() => {
+    if (inView) {
+      setHasBeenVisible(true);
+    }
+  }, [inView]);
+
   return (
     <article
+      ref={ref}
       role={onSelect ? "button" : undefined}
       tabIndex={onSelect ? 0 : undefined}
       onClick={onSelect}
@@ -24,15 +43,28 @@ const ProjectCard = ({
           onSelect();
         }
       }}
-      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-500 ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
+      onFocusCapture={() => setIsFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setIsFocused(false);
+        }
+      }}
+      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-700 ${hasBeenVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
         } ${isCompact ? "max-w-sm" : ""
         }`}
     >
-      <div className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}>
+      <div
+        className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setHasActivatedPreview(true)}
+      >
         <div className="absolute inset-0 z-20 border border-primary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
         <img
-          src={img}
+          src={imageSrc}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-contain transition-all duration-700 grayscale-[25%] group-hover:grayscale-0 group-hover:scale-[1.02]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent pointer-events-none" />
@@ -76,7 +108,7 @@ const ProjectCard = ({
             target="_blank"
             rel="noreferrer"
             onClick={(event) => event.stopPropagation()}
-            className={`w-full inline-flex items-center justify-center rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgba(14,165,233,0.22)] ${isCompact ? "px-4 py-2.5" : "px-6 py-3"
+            className={`w-full inline-flex items-center justify-center rounded-xl border border-primary/40 text-primary font-bold tracking-[0.14em] uppercase text-xs transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_18px_rgb(var(--color-primary-rgb)/0.22)] ${isCompact ? "px-4 py-2.5" : "px-6 py-3"
               }`}
           >
             View Project
