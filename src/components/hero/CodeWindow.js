@@ -5,7 +5,7 @@ const CodeWindow = () => {
     return (
         <div className="relative group perspective-1000 will-change-transform">
             {/* Main Code Window */}
-            <div className="glass rounded-3xl overflow-hidden border border-white/40 dark:border-white/5 shadow-2xl transition-all duration-700 bg-white/70 dark:bg-background-dark/40 backdrop-blur-2xl group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.1)] dark:group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.15)] will-change-transform">
+            <div className="glass rounded-3xl overflow-hidden border border-white/40 dark:border-white/5 shadow-l dark:shadow-2xl transition-all duration-700 bg-white/70 dark:bg-background-dark/40 backdrop-blur-2xl group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.1)] dark:group-hover:shadow-[0_0_50px_rgb(var(--color-primary-rgb)/0.15)] will-change-transform">
                 {/* Title Bar */}
                 <div className="flex items-center justify-between px-6 py-4 border-b border-black/[0.03] dark:border-white/[0.03] bg-white/50 dark:bg-white/5">
                     <div className="flex gap-2">

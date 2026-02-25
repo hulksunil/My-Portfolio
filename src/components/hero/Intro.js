@@ -140,7 +140,7 @@ const Intro = () => {
           {/* Right Column: Code Window */}
           <div className="lg:col-span-5 hidden lg:block perspective-1000">
             <div className="animate-float">
-              <div className="transform transition-transform duration-700 shadow-2xl">
+              <div className="transform transition-transform duration-700 shadow-none dark:shadow-2xl">
                 <CodeWindow />
               </div>
             </div>
