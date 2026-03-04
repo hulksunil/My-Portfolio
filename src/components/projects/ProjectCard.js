@@ -36,8 +36,13 @@ const ProjectCard = ({
   }, [enableReveal, inView]);
 
   return (
-    <article
+    <div
       ref={enableReveal ? ref : undefined}
+      className={`w-full h-full transition-[opacity,transform] duration-700 ${enableReveal ? (hasBeenVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8") : "opacity-100 translate-y-0"
+        }`}
+      style={enableReveal ? { transitionDelay: `${revealDelayMs}ms` } : undefined}
+    >
+      <article
       role={onSelect ? "button" : undefined}
       tabIndex={onSelect ? 0 : undefined}
       onClick={onSelect}
@@ -55,10 +60,9 @@ const ProjectCard = ({
           setIsFocused(false);
         }
       }}
-      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-all duration-700 ${enableReveal ? (hasBeenVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8") : "opacity-100 translate-y-0"} ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
+      className={`group relative w-full h-full flex flex-col rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-900/70 backdrop-blur-md shadow-xl shadow-slate-200/40 dark:shadow-none transition-[border-color,box-shadow,transform] duration-300 transform-gpu ${onSelect ? "hover:-translate-y-2 hover:border-primary/50 cursor-pointer" : ""
         } ${isCompact ? "max-w-sm" : ""
         }`}
-      style={enableReveal ? { transitionDelay: `${revealDelayMs}ms` } : undefined}
     >
       <div
         className={`relative overflow-hidden ${isCompact ? "aspect-[4/3]" : "aspect-video"} bg-slate-200/60 dark:bg-slate-800/50`}
@@ -124,7 +128,8 @@ const ProjectCard = ({
           </a>
         </div>
       </div>
-    </article>
+      </article>
+    </div>
   );
 };
 
