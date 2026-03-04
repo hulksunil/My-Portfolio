@@ -42,14 +42,23 @@ const Projects = () => {
 
   const top3Projects = projects.slice(0, 3);
   const remainingProjects = projects.slice(3);
-  const additionalProjectRows = [];
-
-  for (let i = 0; i < remainingProjects.length; i += 3) {
-    additionalProjectRows.push(remainingProjects.slice(i, i + 3));
-  }
+  const additionalProjectRows = Array.from(
+    { length: Math.ceil(remainingProjects.length / 3) },
+    (_, rowIndex) => remainingProjects.slice(rowIndex * 3, rowIndex * 3 + 3)
+  );
 
   const selectedProject =
     selectedProjectIndex !== null ? projects[selectedProjectIndex] : null;
+
+  const renderAdditionalProjectCard = (project, projectIndex) => (
+    <ProjectCard
+      {...project}
+      onSelect={!isMobile ? () => openModal(projectIndex + 3) : undefined}
+      isFeatured={false}
+      isCompact
+      enableReveal={false}
+    />
+  );
 
   return (
     <section id="projects" className="projects px-5 py-24 relative overflow-hidden">
@@ -92,13 +101,7 @@ const Projects = () => {
             <div className="md:hidden space-y-4">
               {remainingProjects.map((project, index) => (
                 <div key={project.title} className="w-full max-w-sm mx-auto">
-                  <ProjectCard
-                    {...project}
-                    onSelect={!isMobile ? () => openModal(index + 3) : undefined}
-                    isFeatured={false}
-                    isCompact
-                    enableReveal={false}
-                  />
+                  {renderAdditionalProjectCard(project, index)}
                 </div>
               ))}
             </div>
@@ -115,13 +118,7 @@ const Projects = () => {
                     className={isOddLast ? "col-span-2 flex justify-center" : "flex justify-center"}
                   >
                     <div className="w-full max-w-sm">
-                      <ProjectCard
-                        {...project}
-                        onSelect={!isMobile ? () => openModal(index + 3) : undefined}
-                        isFeatured={false}
-                        isCompact
-                        enableReveal={false}
-                      />
+                      {renderAdditionalProjectCard(project, index)}
                     </div>
                   </div>
                 );
@@ -141,14 +138,8 @@ const Projects = () => {
                   {row.map((project, itemIndex) => {
                     const projectIndex = rowIndex * 3 + itemIndex;
                     return (
-                      <div key={project.title} className={row.length < 3 ? "w-full max-w-sm" : "flex justify-center"}>
-                        <ProjectCard
-                          {...project}
-                          onSelect={!isMobile ? () => openModal(projectIndex + 3) : undefined}
-                          isFeatured={false}
-                          isCompact
-                          enableReveal={false}
-                        />
+                      <div key={project.title} className="w-full max-w-sm">
+                        {renderAdditionalProjectCard(project, projectIndex)}
                       </div>
                     );
                   })}
