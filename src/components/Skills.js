@@ -39,39 +39,19 @@ import skillCategories from "../data/skills";
 const SkillCard = ({ skillIcons, category, skillList }) => {
   const { ref: skillRef, inView: skillIsVisible } = useInView();
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
-  const categoryStyles = {
-    "Programming Languages": {
-      accent: "bg-gradient-to-r from-sky-500/60 to-cyan-500/50",
-      pattern:
-        "bg-[linear-gradient(to_right,rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:18px_18px]",
-    },
-    "Frameworks & Libraries": {
-      accent: "bg-gradient-to-r from-emerald-500/50 to-teal-500/45",
-      pattern:
-        "bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.26)_1px,transparent_0)] bg-[size:14px_14px]",
-    },
-    Databases: {
-      accent: "bg-gradient-to-r from-indigo-500/50 to-blue-500/45",
-      pattern:
-        "bg-[repeating-linear-gradient(0deg,transparent,transparent_10px,rgba(148,163,184,0.16)_10px,rgba(148,163,184,0.16)_11px)]",
-    },
-    "Tools & Platforms": {
-      accent: "bg-gradient-to-r from-amber-500/50 to-orange-500/45",
-      pattern:
-        "bg-[linear-gradient(135deg,rgba(148,163,184,0.14)_25%,transparent_25%,transparent_50%,rgba(148,163,184,0.14)_50%,rgba(148,163,184,0.14)_75%,transparent_75%,transparent)] bg-[size:18px_18px]",
-    },
-    "Additional Knowledge": {
-      accent: "bg-gradient-to-r from-violet-500/50 to-fuchsia-500/45",
-      pattern:
-        "bg-[repeating-linear-gradient(90deg,transparent,transparent_12px,rgba(148,163,184,0.16)_12px,rgba(148,163,184,0.16)_13px)]",
-    },
-    Languages: {
-      accent: "bg-gradient-to-r from-rose-500/50 to-pink-500/45",
-      pattern:
-        "bg-[radial-gradient(ellipse_at_top,rgba(148,163,184,0.15),transparent_55%)]",
-    },
+  const categoryAccents = {
+    "Programming Languages": "bg-gradient-to-r from-sky-500/60 to-cyan-500/50",
+    "Frameworks & Libraries": "bg-gradient-to-r from-emerald-500/50 to-teal-500/45",
+    "Databases": "bg-gradient-to-r from-indigo-500/50 to-blue-500/45",
+    "Tools & Platforms": "bg-gradient-to-r from-amber-500/50 to-orange-500/45",
+    "Additional Knowledge": "bg-gradient-to-r from-violet-500/50 to-fuchsia-500/45",
+    "Languages": "bg-gradient-to-r from-rose-500/50 to-pink-500/45",
   };
-  const activeStyle = categoryStyles[category];
+  const categoryStyle = {
+    accent: categoryAccents[category] || categoryAccents["Frameworks & Libraries"],
+    pattern:
+      "bg-[radial-gradient(circle_at_1px_1px,rgba(148,163,184,0.26)_1px,transparent_0)] bg-[size:14px_14px]",
+  };
 
   useEffect(() => {
     if (skillIsVisible) {
@@ -85,8 +65,8 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
       className={`group fade-in-section relative overflow-hidden w-full max-w-[380px] h-full bg-slate-50 dark:bg-slate-900/40 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none hover:border-primary/40 hover:scale-[1.03] hover:shadow-[0_14px_34px_rgb(var(--color-primary-rgb)/0.22)] dark:hover:shadow-[0_14px_34px_rgb(var(--color-primary-rgb)/0.28)] transition-all duration-300 ${hasBeenVisible ? "is-visible" : ""
         }`}
     >
-      <div className={`absolute inset-0 opacity-40 dark:opacity-20 ${activeStyle.pattern}`} />
-      <div className={`absolute left-0 top-0 h-1 w-full ${activeStyle.accent}`} />
+      <div className={`absolute inset-0 opacity-40 dark:opacity-20 ${categoryStyle.pattern}`} />
+      <div className={`absolute left-0 top-0 h-1 w-full ${categoryStyle.accent}`} />
 
       <div className="relative z-10 h-full">
         <h3 className="flex items-center mb-4 text-xl font-semibold">
