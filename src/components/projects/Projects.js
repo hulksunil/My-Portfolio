@@ -3,6 +3,7 @@ import HeadingTitle from "../utils/HeadingTitle";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import useProjectModal from "./useProjectModal";
+import projects from "../../data/projects";
 
 /**
  * Projects component
@@ -16,7 +17,7 @@ import useProjectModal from "./useProjectModal";
  * Make a simon game quick in react or something and then add it (shouldn't be too hard)
  *
  */
-const Projects = ({ projects }) => {
+const Projects = () => {
   const [isMobile, setIsMobile] = useState(false);
   const {
     selectedProjectIndex,

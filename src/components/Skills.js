@@ -34,6 +34,7 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { useInView } from "react-intersection-observer";
+import skillCategories from "../data/skills";
 
 const SkillCard = ({ skillIcons, category, skillList }) => {
   const { ref: skillRef, inView: skillIsVisible } = useInView();
@@ -109,48 +110,42 @@ const SkillCard = ({ skillIcons, category, skillList }) => {
 };
 
 const Skills = () => {
-  const skills = {
-    "Programming Languages": [
-      { name: "Java", icon: <FaJava /> },
-      { name: "Python", icon: <FaPython /> },
-      { name: "C++", icon: <SiCplusplus /> },
-      { name: "C#", icon: <FaCuttlefish /> },
-      { name: "JavaScript", icon: <FaJs /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "Kotlin", icon: <SiKotlin /> },
-      { name: "Bash Scripting", icon: <SiGnubash /> },
-      { name: "Go", icon: <SiGo /> },
-    ],
-    "Frameworks & Libraries": [
-      { name: "ReactJS", icon: <SiReact /> },
-      { name: "NodeJS", icon: <SiNodedotjs /> },
-      { name: "Spring Boot", icon: <SiSpringboot /> },
-      { name: "Flutter", icon: <SiFlutter /> },
-
-      { name: "JUnit", icon: <SiJunit5 /> },
-      { name: "Jest", icon: <SiJest /> },
-    ],
-    Databases: [
-      { name: "SQL", icon: <FaDatabase /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "Firestore", icon: <SiGooglecloud /> },
-    ],
-    "Tools & Platforms": [
-      { name: "Git", icon: <FaGitAlt /> },
-      { name: "Swagger", icon: <SiSwagger /> },
-      { name: "VS Code", icon: <VscVscode /> },
-      { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
-      { name: "UML", icon: <SiUml /> },
-    ],
-    "Additional Knowledge": [
-      { name: "80x86 Assembly", icon: <FaMicrochip /> },
-      { name: "VHDL", icon: <FaCogs /> },
-    ],
-    Languages: [
-      { name: "English (Fluent)", icon: <FaLanguage /> },
-      { name: "French (Intermediate)", icon: <FaLanguage /> },
-    ],
+  const skillItemIcons = {
+    java: <FaJava />,
+    python: <FaPython />,
+    cplusplus: <SiCplusplus />,
+    csharp: <FaCuttlefish />,
+    javascript: <FaJs />,
+    typescript: <SiTypescript />,
+    kotlin: <SiKotlin />,
+    bash: <SiGnubash />,
+    go: <SiGo />,
+    react: <SiReact />,
+    nodejs: <SiNodedotjs />,
+    springboot: <SiSpringboot />,
+    flutter: <SiFlutter />,
+    junit: <SiJunit5 />,
+    jest: <SiJest />,
+    database: <FaDatabase />,
+    mongodb: <SiMongodb />,
+    googlecloud: <SiGooglecloud />,
+    git: <FaGitAlt />,
+    swagger: <SiSwagger />,
+    vscode: <VscVscode />,
+    intellij: <SiIntellijidea />,
+    uml: <SiUml />,
+    assembly: <FaMicrochip />,
+    cogs: <FaCogs />,
+    language: <FaLanguage />,
   };
+
+  const skills = skillCategories.map(({ category, skills: categorySkills }) => ({
+    category,
+    skillList: categorySkills.map(({ name, iconKey }) => ({
+      name,
+      icon: skillItemIcons[iconKey] || <FaCode />,
+    })),
+  }));
 
   const skillIcons = {
     "Programming Languages": <FaCode className="hoverIcon text-primary transition-transform duration-[1500ms] [transform-style:preserve-3d] group-hover:[transform:rotateY(360deg)]" />,
@@ -166,7 +161,7 @@ const Skills = () => {
       <HeadingTitle title="Skills" description="Tools and technologies I've mastered over the years." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-[1280px] mx-auto justify-items-center">
-        {Object.entries(skills).map(([category, skillList]) => (
+        {skills.map(({ category, skillList }) => (
           <div key={category} className="w-full flex justify-center">
             <SkillCard
               skillIcons={skillIcons}
