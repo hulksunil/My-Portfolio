@@ -52,7 +52,14 @@ const Projects = ({ projects }) => {
       {/* Top 3 projects */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {top3Projects.map((project, index) => (
-          <div key={project.title} className="w-full">
+          <div
+            key={project.title}
+            // if the index is 2, make it span 2 columns on md and lg
+            className={`w-full ${index === 2
+              ? "md:col-span-2 lg:col-span-1 md:max-w-[min(32rem,100%)] md:mx-auto lg:max-w-none"
+              : ""
+              }`}
+          >
             <ProjectCard
               {...project}
               onSelect={!isMobile ? () => openModal(index) : undefined}
