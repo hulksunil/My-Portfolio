@@ -122,7 +122,7 @@ const Intro = () => {
                   className="p-3.5 glass hover:bg-primary dark:hover:bg-primary/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="GitHub"
                 >
-                  <FaGithub size={26} className="transition-colors" />
+                  <FaGithub size={26} />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
@@ -131,7 +131,7 @@ const Intro = () => {
                   className="p-3.5 glass hover:bg-primary dark:hover:bg-primary/20 border border-black/5 dark:border-white/10 rounded-xl transition-all text-slate-900 dark:text-white hover:text-white hover:scale-110 active:scale-95 shadow-lg group"
                   aria-label="LinkedIn"
                 >
-                  <FaLinkedin size={26} className="transition-colors" />
+                  <FaLinkedin size={26} />
                 </a>
               </div>
             </div>
