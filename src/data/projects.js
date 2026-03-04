@@ -13,6 +13,10 @@ import portfolioPoster from "../assets/img/projects/posters/portfolio.png";
 import emailClientPoster from "../assets/img/projects/posters/emailClient.png";
 import yap2LearnPoster from "../assets/img/projects/posters/yap2Learn.png";
 
+// Priority 1: Project most proud of
+// Priority 2: 2nd most projects im proud of
+// All other priorities are just for organization purposes
+// Projects get ordered based on priority and then date developed so recentmost projects that I'm proud of are at the top
 const projects = [
   {
     title: "PC-Remote",
@@ -89,14 +93,12 @@ const projects = [
     poster: portfolioPoster,
   },
   {
-    // This application lets users learn languages by having conversations with an AI defined in the scenario of their given prompt in their chosen language level. 
-    // The AI will respond to the user in the language they are learning and will correct them if they make any mistakes.
-    title: "Yap 2 Learn",
-    description: "A prompt-engineered language learning application focused on conversational practice, where users chat with AI in their target language at their selected level and receive real-time corrections on mistakes.",
-    tags: ["TypeScript", "ReactJS", "ElevenLabs API", "Gemini API", "Prompt Engineering", "Hackathon Team Project"],
+    title: "Yap2Learn",
+    description: "A voice-first, scenario-based language learning application focused on conversational practice, where users chat with AI in their target language at their selected level and receive real-time corrections on mistakes allowing users to build confidence without the stress of social interactions.",
+    tags: ["TypeScript", "React Native", "ElevenLabs", "Google Gemini", "Prompt Engineering", "Hackathon Team Project"],
     link: "https://github.com/hulksunil/Yap2Learn",
-    dateDeveloped: new Date("2026-24-01"),
-    priority: 1,
+    dateDeveloped: new Date("2026-1-24"),
+    priority: 2,
     img: yap2Learn,
     poster: yap2LearnPoster,
   }
