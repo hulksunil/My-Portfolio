@@ -43,6 +43,27 @@ const Projects = () => {
   const top3Projects = projects.slice(0, 3);
   const remainingProjects = projects.slice(3);
 
+  const getAdditionalProjectClassName = (index, total) => {
+    const isLast = index === total - 1;
+    const isSecondLast = index === total - 2;
+    const classes = ["flex", "justify-center"];
+
+    // Keep 3-column layout on lg and center the last row as much as possible.
+    const remainder = total % 3;
+    if (remainder === 1 && isLast) {
+      classes.push("lg:col-start-2");
+    } else if (remainder === 2) {
+      if (isSecondLast) {
+        classes.push("lg:col-start-1");
+      }
+      if (isLast) {
+        classes.push("lg:col-start-3");
+      }
+    }
+
+    return classes.join(" ");
+  };
+
   const selectedProject =
     selectedProjectIndex !== null ? projects[selectedProjectIndex] : null;
 
@@ -82,9 +103,14 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 w-fit mx-auto">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 w-fit mx-auto"
+          >
             {remainingProjects.map((project, index) => (
-              <div key={project.title} className="flex justify-center">
+              <div
+                key={project.title}
+                className={getAdditionalProjectClassName(index, remainingProjects.length)}
+              >
                 <ProjectCard
                   {...project}
                   onSelect={!isMobile ? () => openModal(index + 3) : undefined}
