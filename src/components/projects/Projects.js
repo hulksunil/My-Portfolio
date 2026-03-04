@@ -42,27 +42,11 @@ const Projects = () => {
 
   const top3Projects = projects.slice(0, 3);
   const remainingProjects = projects.slice(3);
+  const additionalProjectRows = [];
 
-  const getAdditionalProjectClassName = (index, total) => {
-    const isLast = index === total - 1;
-    const isSecondLast = index === total - 2;
-    const classes = ["flex", "justify-center"];
-
-    // Keep 3-column layout on lg and center the last row as much as possible.
-    const remainder = total % 3;
-    if (remainder === 1 && isLast) {
-      classes.push("lg:col-start-2");
-    } else if (remainder === 2) {
-      if (isSecondLast) {
-        classes.push("lg:col-start-1");
-      }
-      if (isLast) {
-        classes.push("lg:col-start-3");
-      }
-    }
-
-    return classes.join(" ");
-  };
+  for (let i = 0; i < remainingProjects.length; i += 3) {
+    additionalProjectRows.push(remainingProjects.slice(i, i + 3));
+  }
 
   const selectedProject =
     selectedProjectIndex !== null ? projects[selectedProjectIndex] : null;
@@ -103,23 +87,74 @@ const Projects = () => {
             </p>
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 w-fit mx-auto"
-          >
-            {remainingProjects.map((project, index) => (
-              <div
-                key={project.title}
-                className={getAdditionalProjectClassName(index, remainingProjects.length)}
-              >
-                <ProjectCard
-                  {...project}
-                  onSelect={!isMobile ? () => openModal(index + 3) : undefined}
-                  isFeatured={false}
-                  isCompact
-                  enableReveal={false}
-                />
-              </div>
-            ))}
+          <div className="space-y-4 lg:space-y-5 max-w-[1140px] mx-auto">
+            {/* Mobile */}
+            <div className="md:hidden space-y-4">
+              {remainingProjects.map((project, index) => (
+                <div key={project.title} className="w-full max-w-sm mx-auto">
+                  <ProjectCard
+                    {...project}
+                    onSelect={!isMobile ? () => openModal(index + 3) : undefined}
+                    isFeatured={false}
+                    isCompact
+                    enableReveal={false}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Medium screens: 2-column symmetry */}
+            <div className="hidden md:grid lg:hidden grid-cols-2 gap-4">
+              {remainingProjects.map((project, index) => {
+                const isOddLast =
+                  remainingProjects.length % 2 === 1 &&
+                  index === remainingProjects.length - 1;
+                return (
+                  <div
+                    key={project.title}
+                    className={isOddLast ? "col-span-2 flex justify-center" : "flex justify-center"}
+                  >
+                    <div className="w-full max-w-sm">
+                      <ProjectCard
+                        {...project}
+                        onSelect={!isMobile ? () => openModal(index + 3) : undefined}
+                        isFeatured={false}
+                        isCompact
+                        enableReveal={false}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Large screens: 3-column rows with centered partial final row */}
+            <div className="hidden lg:block space-y-5">
+              {additionalProjectRows.map((row, rowIndex) => (
+                <div
+                  key={`additional-project-row-${rowIndex}`}
+                  className={row.length < 3
+                    ? "flex flex-wrap justify-center gap-5"
+                    : "grid grid-cols-3 gap-5 justify-items-center"
+                  }
+                >
+                  {row.map((project, itemIndex) => {
+                    const projectIndex = rowIndex * 3 + itemIndex;
+                    return (
+                      <div key={project.title} className={row.length < 3 ? "w-full max-w-sm" : "flex justify-center"}>
+                        <ProjectCard
+                          {...project}
+                          onSelect={!isMobile ? () => openModal(projectIndex + 3) : undefined}
+                          isFeatured={false}
+                          isCompact
+                          enableReveal={false}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}

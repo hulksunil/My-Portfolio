@@ -5,11 +5,13 @@ import portfolio from "../assets/img/projects/portfolio.gif";
 import emailClient from "../assets/img/projects/emailClient.gif";
 import airzen from "../assets/img/projects/airzen.gif";
 import pcRemote from "../assets/img/projects/pc-remote.gif";
+import yap2Learn from "../assets/img/projects/yap2Learn.gif";
 
 import bouncingBallPoster from "../assets/img/projects/posters/bouncing-ball.png";
 import hovercraftProjectPoster from "../assets/img/projects/posters/hovercraft-project-5.png";
 import portfolioPoster from "../assets/img/projects/posters/portfolio.png";
 import emailClientPoster from "../assets/img/projects/posters/emailClient.png";
+import yap2LearnPoster from "../assets/img/projects/posters/yap2Learn.png";
 
 const projects = [
   {
@@ -86,6 +88,18 @@ const projects = [
     img: portfolio,
     poster: portfolioPoster,
   },
+  {
+    // This application lets users learn languages by having conversations with an AI defined in the scenario of their given prompt in their chosen language level. 
+    // The AI will respond to the user in the language they are learning and will correct them if they make any mistakes.
+    title: "Yap 2 Learn",
+    description: "A prompt-engineered language learning application focused on conversational practice, where users chat with AI in their target language at their selected level and receive real-time corrections on mistakes.",
+    tags: ["TypeScript", "ReactJS", "ElevenLabs API", "Gemini API", "Prompt Engineering", "Hackathon Team Project"],
+    link: "https://github.com/hulksunil/Yap2Learn",
+    dateDeveloped: new Date("2026-24-01"),
+    priority: 1,
+    img: yap2Learn,
+    poster: yap2LearnPoster,
+  }
 ];
 
 const sortedProjects = [...projects].sort(
