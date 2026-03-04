@@ -40,7 +40,7 @@ const ExperienceEntry = ({ exp, index, isLast }) => {
         <div className="md:w-5/12">
           <div className="glass p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none hover:border-primary/40 transition-all duration-300 group">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-primary text-xl group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 min-w-12 min-h-12 rounded-lg bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-primary text-xl group-hover:scale-110 transition-transform">
                 {exp.icon}
               </div>
               <div>
