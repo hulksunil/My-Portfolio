@@ -70,7 +70,9 @@ const Contact = () => {
                 </div>
               </div>
 
+              {/* Social Media */}
               <div className="flex gap-4">
+                {/* GitHub */}
                 <a
                   rel="noopener noreferrer"
                   href="https://github.com/hulksunil"
@@ -78,7 +80,9 @@ const Contact = () => {
                 >
                   <FaGithub size={"30px"} />
                 </a>
+                {/* LinkedIn */}
                 <a
+                  rel="noopener noreferrer"
                   href="https://www.linkedin.com/in/Sunil-Kublalsingh/"
                   target="_blank"
                 >

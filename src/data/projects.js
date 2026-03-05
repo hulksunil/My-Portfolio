@@ -23,7 +23,7 @@ const projects = [
     description: "A voice-first, scenario-based language learning application focused on conversational practice, where users chat with an AI in their chosen language allowing users to build confidence without the stress of social interactions.",
     tags: ["TypeScript", "React Native", "ElevenLabs", "Google Gemini", "Prompt Engineering", "Hackathon Team Project"],
     link: "https://github.com/hulksunil/Yap2Learn",
-    dateDeveloped: new Date("2026-1-24"),
+    dateDeveloped: new Date("2026-01-24"),
     priority: 2,
     img: yap2Learn,
     poster: yap2LearnPoster,
