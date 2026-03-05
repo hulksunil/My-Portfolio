@@ -19,6 +19,16 @@ import yap2LearnPoster from "../assets/img/projects/posters/yap2Learn.png";
 // Projects get ordered based on priority and then date developed so recentmost projects that I'm proud of are at the top
 const projects = [
   {
+    title: "Yap2Learn",
+    description: "A voice-first, scenario-based language learning application focused on conversational practice, where users chat with an AI in their chosen language allowing users to build confidence without the stress of social interactions.",
+    tags: ["TypeScript", "React Native", "ElevenLabs", "Google Gemini", "Prompt Engineering", "Hackathon Team Project"],
+    link: "https://github.com/hulksunil/Yap2Learn",
+    dateDeveloped: new Date("2026-1-24"),
+    priority: 2,
+    img: yap2Learn,
+    poster: yap2LearnPoster,
+  },
+  {
     title: "PC-Remote",
     description:
       "A client-server application that lets users control their PC from a mobile device with mouse input, media controls, and system power options, built on TCP and UDP sockets.",
@@ -91,16 +101,6 @@ const projects = [
     priority: 5,
     img: portfolio,
     poster: portfolioPoster,
-  },
-  {
-    title: "Yap2Learn",
-    description: "A voice-first, scenario-based language learning application focused on conversational practice, where users chat with AI in their target language at their selected level and receive real-time corrections on mistakes allowing users to build confidence without the stress of social interactions.",
-    tags: ["TypeScript", "React Native", "ElevenLabs", "Google Gemini", "Prompt Engineering", "Hackathon Team Project"],
-    link: "https://github.com/hulksunil/Yap2Learn",
-    dateDeveloped: new Date("2026-1-24"),
-    priority: 2,
-    img: yap2Learn,
-    poster: yap2LearnPoster,
   }
 ];
 
