@@ -3,6 +3,8 @@ import CV from "../assets/Sunil_Kublalsingh.pdf";
 import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 
 const navLinks = ["home", "projects", "experience", "skills", "about", "contact"];
+const LEGACY_SITE_URL = process.env.REACT_APP_LEGACY_SITE_URL || "https://v1-legacy-sunil-kublalsingh.onrender.com";
+const LEGACY_CLICK_TARGET = 5;
 
 const CustomNavLink = ({ href, activeLink, setActiveLink, onClick }) => {
   return (
@@ -26,6 +28,7 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
   const [activeLink, setActiveLink] = useState("home");
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileToggled, setIsMobileToggled] = useState(false);
+  const [legacyClicks, setLegacyClicks] = useState(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,6 +37,28 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Legacy site click handler
+  useEffect(() => {
+    if (legacyClicks === 0) return;
+    const timeoutId = setTimeout(() => setLegacyClicks(0), 4000);
+    return () => clearTimeout(timeoutId);
+  }, [legacyClicks]);
+
+  const handleLegacyClick = () => {
+    const nextClicks = legacyClicks + 1;
+    const remainingClicks = LEGACY_CLICK_TARGET - nextClicks;
+
+    if (remainingClicks <= 0) {
+      setLegacyClicks(0);
+      if (LEGACY_SITE_URL) {
+        window.open(LEGACY_SITE_URL, "_blank", "noopener,noreferrer");
+      }
+      return;
+    }
+
+    setLegacyClicks(nextClicks);
+  };
 
   // Keep active state in sync when URL hash changes (back/forward, direct hash edits)
   useEffect(() => {
@@ -106,9 +131,14 @@ const NavBar = ({ toggleTheme, currentTheme }) => {
                 <img src="/favicon/favicon.svg" alt="Logo" className="w-full h-full object-cover" />
               </a>
             </div>
-            <span className="font-display font-bold text-lg tracking-tight hidden sm:block text-slate-900 dark:text-white">
-              SUNIL
-            </span>
+            <div className="relative hidden sm:block">
+              <span
+                onClick={handleLegacyClick}
+                className="font-display font-bold text-lg tracking-tight text-slate-900 dark:text-white select-none"
+              >
+                SUNIL
+              </span>
+            </div>
           </div>
 
           {/* Desktop Nav Links */}
