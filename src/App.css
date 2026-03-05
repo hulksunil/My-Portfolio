@@ -24,20 +24,6 @@ html {
   scroll-padding-top: 75px;
 }
 
-body {
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-size: 18px;
-  overflow-x: hidden;
-  transition: background-image 0.4s ease, color 0.4s ease;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
 button {
   border: 0;
   background-color: transparent;

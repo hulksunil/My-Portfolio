@@ -16,12 +16,7 @@
   --linkedin-color: #00a4fc;
   --github-color: #59636e;
 
-  --accent_color: #e0e0e0;
-  --accent_color_dark: #ccc;
   --tech-icon-bubble-color: rgba(0, 0, 0, 0.1);
-
-  --lets-talk-gradient-start: #27779c;
-  --lets-talk-gradient-end: #7c8e96;
 
   /* Shared gradients */
   --intro-gradient-start: rgb(var(--color-primary-rgb));
@@ -34,11 +29,6 @@
   --color-text-rgb: 248 250 252;
   --color-text-muted-rgb: 171 171 171;
 
-  --accent_color: #1a262c;
-  --accent_color_dark: #000e15;
   --tech-icon-bubble-color: rgba(255, 255, 255, 0.1);
-
-  --lets-talk-gradient-start: #70a5bd;
-  --lets-talk-gradient-end: #b7bbbd;
 
 }
