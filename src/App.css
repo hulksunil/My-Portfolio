@@ -2,21 +2,31 @@
   width: 8px;
 }
 
+/* Light theme (default) */
 ::-webkit-scrollbar-track {
-  background: #1e1e1e;
-  /* Match this to your dark background color */
+  background: #e2e8f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #555;
-  /* Slightly lighter than the background for contrast */
+  background: #94a3b8;
   border-radius: 4px;
-  /* Rounded edges for a smooth, clean look */
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Dark theme */
+.dark ::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #888;
-  /* Slightly lighter on hover for better visibility */
 }
 
 html {
