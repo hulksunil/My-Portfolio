@@ -11,9 +11,10 @@ It showcases my work experience, technical skills, and completed projects, and i
 ---
 
 ## 🛠 Tech Stack
-- **ReactJS**  
-- **React Bootstrap**  
-- **Render** (deployment)  
+- **ReactJS**
+- **Tailwind CSS** (styling & animations)
+- **React Icons** (iconography)
+- **Render** (deployment)
 - **Node.js & npm** (runtime and package manager)
 
 ---
