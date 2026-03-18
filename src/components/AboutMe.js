@@ -1,5 +1,5 @@
 import HeadingTitle from "./utils/HeadingTitle";
-import me from "../assets/img/me.jpg";
+import me from "../assets/img/me-4.jpg";
 
 const AboutMe = () => {
     return (
@@ -9,7 +9,7 @@ const AboutMe = () => {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 w-full max-w-5xl p-8 bg-slate-100 dark:bg-slate-900/30 rounded-[20px] mb-16">
                 <div className="w-1/2 flex justify-center">
                     {/* Edit the object-[0%_0%] to change the position of the image */}
-                    <img src={me} alt="Me" className="w-full max-w-sm aspect-square object-cover rounded-full object-[0%_0%]" />
+                    <img src={me} alt="Me" className="w-full max-w-sm aspect-square object-cover rounded-full object-[50%_50%]" />
                 </div>
                 <p className="text-slate-900 dark:text-white w-1/2">
                     I’m a Computer Engineering student focused on backend development and systems programming. I enjoy building practical applications that connect mobile apps, backend services, and real world devices.
