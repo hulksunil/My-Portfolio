@@ -1,5 +1,5 @@
 import HeadingTitle from "./utils/HeadingTitle";
-import me from "../assets/img/me-4.jpg";
+import me from "../assets/img/me-6.jpg";
 
 const AboutMe = () => {
     return (
