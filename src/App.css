@@ -49,12 +49,15 @@ button {
   width: 100%;
   height: 100%;
   z-index: 999999;
-  background-color: rgb(var(--color-bg-dark-rgb));
-  background-image: url(./assets/img/loader.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20%;
+  background-color: rgb(var(--color-loader-bg-rgb));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.1s linear, visibility .5s linear;
+}
+
+.loader_icon svg {
+  width: 20%;
 }
 
 .loader_icon_none {

@@ -11,18 +11,43 @@ import AboutMe from "./components/AboutMe";
 
 const Loader = ({ load }) => {
   return (
-
     <div className="loader">
-      <div className={load ? "loader_icon" : "loader_icon loader_icon_none"}></div>
+      <div className={load ? "loader_icon" : "loader_icon loader_icon_none"}>
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
+          <circle fill='rgb(var(--color-loader-dot-rgb))' stroke='rgb(var(--color-loader-dot-rgb))' strokeWidth='15' r='15' cx='35' cy='100'>
+            <animate attributeName='cx' calcMode='spline' dur='2' values='35;165;165;35;35' keySplines='0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1' repeatCount='indefinite' begin='0'></animate>
+          </circle>
+          <circle fill='rgb(var(--color-loader-dot-rgb))' stroke='rgb(var(--color-loader-dot-rgb))' strokeWidth='15' opacity='.8' r='15' cx='35' cy='100'>
+            <animate attributeName='cx' calcMode='spline' dur='2' values='35;165;165;35;35' keySplines='0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1' repeatCount='indefinite' begin='0.05'></animate>
+          </circle>
+          <circle fill='rgb(var(--color-loader-dot-rgb))' stroke='rgb(var(--color-loader-dot-rgb))' strokeWidth='15' opacity='.6' r='15' cx='35' cy='100'>
+            <animate attributeName='cx' calcMode='spline' dur='2' values='35;165;165;35;35' keySplines='0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1' repeatCount='indefinite' begin='.1'></animate>
+          </circle>
+          <circle fill='rgb(var(--color-loader-dot-rgb))' stroke='rgb(var(--color-loader-dot-rgb))' strokeWidth='15' opacity='.4' r='15' cx='35' cy='100'>
+            <animate attributeName='cx' calcMode='spline' dur='2' values='35;165;165;35;35' keySplines='0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1' repeatCount='indefinite' begin='.15'></animate>
+          </circle>
+          <circle fill='rgb(var(--color-loader-dot-rgb))' stroke='rgb(var(--color-loader-dot-rgb))' strokeWidth='15' opacity='.2' r='15' cx='35' cy='100'>
+            <animate attributeName='cx' calcMode='spline' dur='2' values='35;165;165;35;35' keySplines='0 .1 .5 1;0 .1 .5 1;0 .1 .5 1;0 .1 .5 1' repeatCount='indefinite' begin='.2'></animate>
+          </circle>
+        </svg>
+      </div>
     </div>
-
   );
 }
 
 
 function App() {
   const [load, updateLoad] = useState(true);
-  const [theme, setTheme] = useState("dark"); // default to dark
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      return savedTheme;
+    }
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,6 +65,20 @@ function App() {
       document.documentElement.classList.remove("dark");
     }
   }, [theme]);
+
+  // Listen for system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      // Update theme if the user hasn't explicitly set one in localStorage
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    };
+    
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   // Pause animations during scroll for better performance
   useEffect(() => {
@@ -68,7 +107,11 @@ function App() {
 
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme((prev) => {
+      const newTheme = prev === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
 
   return (
