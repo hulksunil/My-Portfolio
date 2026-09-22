@@ -9,6 +9,17 @@ import {
 
 const experiences = [
   {
+    company: "Morgan Stanley",
+    role: "Technology Analyst",
+    duration: "Aug 2025 - Present",
+    location: "Montréal, QC",
+    icon: <FaBuilding />,
+    points: [
+      "Currently in training as a Technology Analyst, gaining expertise in concurrent systems, distributed computing, and modern software development practices"
+    ],
+  },
+  {
+
     company: "Transperfect",
     role: "Language Data Annotator",
     duration: "Apr 2025 - Aug 2025",
@@ -22,7 +33,7 @@ const experiences = [
   },
   {
     company: "Morgan Stanley",
-    role: "Software Developer (Internship)",
+    role: "Technology Analyst (Internship)",
     duration: "May 2024 - Aug 2024",
     location: "Montréal, QC",
     icon: <FaBuilding />,
@@ -34,7 +45,7 @@ const experiences = [
   },
   {
     company: "Morgan Stanley",
-    role: "Software Developer (Internship)",
+    role: "Technology Analyst (Internship)",
     duration: "Jan 2023 - Aug 2023",
     location: "Montréal, QC",
     icon: <FaTerminal />,
