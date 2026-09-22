@@ -38,6 +38,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Sunil Kublalsingh</title>
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <noscript>

@@ -13,6 +13,12 @@
   --color-bg-light-rgb: 248 250 252;
   --color-bg-dark-rgb: 2 6 23;
 
+  /* Loader Background */
+  --color-loader-bg-rgb: 236 254 255;
+  /* Light teal/cyan tint */
+  --color-loader-dot-rgb: var(--color-primary-rgb);
+  /* Vibrant Teal for light mode */
+
   --linkedin-color: #00a4fc;
   --github-color: #59636e;
 
@@ -31,4 +37,7 @@
 
   --tech-icon-bubble-color: rgba(255, 255, 255, 0.1);
 
+  --color-loader-bg-rgb: 2 6 23;
+  --color-loader-dot-rgb: 1 102 122;
+  /* Original #01667A */
 }

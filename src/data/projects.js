@@ -8,6 +8,7 @@ import pcRemote from "../assets/img/projects/pc-remote.gif";
 import yap2Learn from "../assets/img/projects/yap2Learn.gif";
 
 import bouncingBallPoster from "../assets/img/projects/posters/bouncing-ball.png";
+import carsRUsPoster from "../assets/img/projects/posters/cars-r-us.png";
 import hovercraftProjectPoster from "../assets/img/projects/posters/hovercraft-project-5.png";
 import portfolioPoster from "../assets/img/projects/posters/portfolio.png";
 import emailClientPoster from "../assets/img/projects/posters/emailClient.png";
@@ -68,6 +69,7 @@ const projects = [
     dateDeveloped: new Date("2024-01-01"),
     priority: 2,
     img: carsRUs,
+    poster: carsRUsPoster,
   },
   {
     title: "Hovercraft Project",
